@@ -2,4 +2,6 @@ buildscript {
 
     repositories {
 
-        jcenter
+        jcenter()
+        mavenCentral()
+        maven { url = 'https
