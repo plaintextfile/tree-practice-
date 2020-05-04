@@ -9,4 +9,8 @@ buildscript {
 
     dependencies {
 
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', versi
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '3.+', changing: true
+    }
+}
+
+apply plugin: 'ne
