@@ -9,4 +9,4 @@ buildscript {
 
     dependencies {
 
-        classpath group: 'net.minecraftforge.grad
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', versi
