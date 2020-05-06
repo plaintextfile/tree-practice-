@@ -19,4 +19,5 @@ apply plugin: 'maven-publish'
 apply plugin: 'signing'
 apply plugin: 'eclipse'
 
-version = "v${mod_version}-${forge_ver
+version = "v${mod_version}-${forge_version.replaceAll("-.*", "")}"
+group 
