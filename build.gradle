@@ -24,4 +24,6 @@ group = "${mod_group}"
 ext.version = "${mod_version}"
 ext.id = "${mod_id}"
 ext.name = "${mod_name}"
-ext.author = "${mod_author
+ext.author = "${mod_author}"
+ext.description = "${mod_description}"
+ext.url = "${mod
