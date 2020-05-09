@@ -21,4 +21,6 @@ apply plugin: 'eclipse'
 
 version = "v${mod_version}-${forge_version.replaceAll("-.*", "")}"
 group = "${mod_group}"
-ext.version = "
+ext.version = "${mod_version}"
+ext.id = "${mod_id}"
+ext.na
