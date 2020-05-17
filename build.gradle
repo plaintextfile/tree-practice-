@@ -30,3 +30,5 @@ ext.url = "${mod_url}"
 ext.loader = "${loader_version.replaceAll("\\..*", "")}"
 ext.forge = "${loader_version}"
 ext.mc = "${mc_version}"
+
+// need this here so eclipse task generates co
