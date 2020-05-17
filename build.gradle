@@ -28,4 +28,5 @@ ext.author = "${mod_author}"
 ext.description = "${mod_description}"
 ext.url = "${mod_url}"
 ext.loader = "${loader_version.replaceAll("\\..*", "")}"
-ext.forge = "${
+ext.forge = "${loader_version}"
+ext.mc = "${mc_version}"
