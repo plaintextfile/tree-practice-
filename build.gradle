@@ -32,4 +32,4 @@ ext.forge = "${loader_version}"
 ext.mc = "${mc_version}"
 
 // need this here so eclipse task generates correctly.
-sourceCompatibility = targetCompatibility = compileJava.sourceCompat
+sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatib
