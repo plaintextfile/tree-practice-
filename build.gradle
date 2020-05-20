@@ -36,4 +36,5 @@ sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = co
 
 minecraft {
 
-    mappings channel: "${mcp_channel}", version: "${mcp_ver
+    mappings channel: "${mcp_channel}", version: "${mcp_version}"
+//    accessTransformer = file('src/main/resources/
