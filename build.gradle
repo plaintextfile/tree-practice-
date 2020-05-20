@@ -32,4 +32,8 @@ ext.forge = "${loader_version}"
 ext.mc = "${mc_version}"
 
 // need this here so eclipse task generates correctly.
-sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatib
+sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
+
+minecraft {
+
+    mappi
