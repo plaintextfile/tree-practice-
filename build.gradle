@@ -36,4 +36,4 @@ sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = co
 
 minecraft {
 
-    mappi
+    mappings channel: "${mcp_channel}", version: "${mcp_ver
