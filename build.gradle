@@ -43,4 +43,6 @@ minecraft {
 
         client {
 
-            workingDirectory project.file('run'
+            workingDirectory project.file('run')
+            jvmArgs.addAll("-ea")
+        
