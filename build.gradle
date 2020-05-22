@@ -39,4 +39,8 @@ minecraft {
     mappings channel: "${mcp_channel}", version: "${mcp_version}"
 //    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
-    r
+    runs {
+
+        client {
+
+     
