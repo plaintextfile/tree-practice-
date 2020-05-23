@@ -49,4 +49,5 @@ minecraft {
 
         server {
 
-            workingD
+            workingDirectory project.file('run')
+       
