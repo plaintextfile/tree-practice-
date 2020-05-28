@@ -52,4 +52,10 @@ minecraft {
             workingDirectory project.file('run')
             jvmArgs.addAll("-ea")
         }
-   
+    }
+
+}
+
+configurations.all {
+
+    resoluti
