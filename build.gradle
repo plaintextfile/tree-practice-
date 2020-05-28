@@ -50,4 +50,6 @@ minecraft {
         server {
 
             workingDirectory project.file('run')
-       
+            jvmArgs.addAll("-ea")
+        }
+   
