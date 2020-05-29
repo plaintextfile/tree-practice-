@@ -60,4 +60,4 @@ configurations.all {
 
     resolutionStrategy.eachDependency { DependencyResolveDetails details ->
 
-        if (detail
+        if (details.requested.group + ":" + details.requ
