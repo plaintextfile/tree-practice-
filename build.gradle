@@ -58,4 +58,6 @@ minecraft {
 
 configurations.all {
 
-    resolutionStrategy.eachDependency { DependencyResolveD
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+
+        if (detail
