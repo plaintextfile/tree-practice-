@@ -60,4 +60,6 @@ configurations.all {
 
     resolutionStrategy.eachDependency { DependencyResolveDetails details ->
 
-        if (details.requested.group + ":" + details.requested.name == "org.lwjgl.lwjgl:lwjgl-platf
+        if (details.requested.group + ":" + details.requested.name == "org.lwjgl.lwjgl:lwjgl-platform") {
+
+            details.useVersion "2
