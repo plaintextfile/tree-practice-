@@ -64,4 +64,12 @@ configurations.all {
 
             details.useVersion "2.9.4-nightly-20150209"
         }
-    
+    }
+}
+
+repositories {
+
+    mavenLocal()
+}
+
+dependenci
