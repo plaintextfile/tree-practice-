@@ -62,4 +62,6 @@ configurations.all {
 
         if (details.requested.group + ":" + details.requested.name == "org.lwjgl.lwjgl:lwjgl-platform") {
 
-            details.useVersion "2
+            details.useVersion "2.9.4-nightly-20150209"
+        }
+    
