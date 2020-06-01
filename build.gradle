@@ -72,4 +72,6 @@ repositories {
     mavenLocal()
 }
 
-dependenci
+dependencies {
+
+    minecraft "net.minecra
