@@ -75,4 +75,4 @@ repositories {
 dependencies {
 
     minecraft "net.minecraftforge:forge:${forge_version}"
-    compileOn
+    compileOnly fileTree(dir: 'libs', include: ['*.jar
