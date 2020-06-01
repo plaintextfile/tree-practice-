@@ -74,4 +74,5 @@ repositories {
 
 dependencies {
 
-    minecraft "net.minecra
+    minecraft "net.minecraftforge:forge:${forge_version}"
+    compileOn
