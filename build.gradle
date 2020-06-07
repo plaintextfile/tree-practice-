@@ -80,4 +80,5 @@ dependencies {
 
 processResources {
 
-    // this will ensure that this task is redone when the ve
+    // this will ensure that this task is redone when the versions change.
+    inputs.property "mod_id", projec
