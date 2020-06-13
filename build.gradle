@@ -81,4 +81,5 @@ dependencies {
 processResources {
 
     // this will ensure that this task is redone when the versions change.
-    inputs.property "mod_id", projec
+    inputs.property "mod_id", project.ext.id
+    inputs.property "mod_name", project
