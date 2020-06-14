@@ -83,4 +83,5 @@ processResources {
     // this will ensure that this task is redone when the versions change.
     inputs.property "mod_id", project.ext.id
     inputs.property "mod_name", project.ext.name
-    inputs.property "mod_name2", proj
+    inputs.property "mod_name2", project.ext.name.replaceAll("\\s", "")
+    i
