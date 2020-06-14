@@ -84,4 +84,4 @@ processResources {
     inputs.property "mod_id", project.ext.id
     inputs.property "mod_name", project.ext.name
     inputs.property "mod_name2", project.ext.name.replaceAll("\\s", "")
-    i
+    inputs.property "mod_version", project.e
