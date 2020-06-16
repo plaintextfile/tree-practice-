@@ -85,4 +85,5 @@ processResources {
     inputs.property "mod_name", project.ext.name
     inputs.property "mod_name2", project.ext.name.replaceAll("\\s", "")
     inputs.property "mod_version", project.ext.version
-    inputs.property "mod_group"
+    inputs.property "mod_group", project.group
+    inputs.property "mod_url", pro
