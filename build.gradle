@@ -88,4 +88,5 @@ processResources {
     inputs.property "mod_group", project.group
     inputs.property "mod_url", project.ext.url
     inputs.property "mod_description", project.ext.description
-    
+    inputs.property "mod_author", project.ext.author
+    in
