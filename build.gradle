@@ -90,4 +90,5 @@ processResources {
     inputs.property "mod_description", project.ext.description
     inputs.property "mod_author", project.ext.author
     inputs.property "loader_version", project.ext.loader
-    inputs.propert
+    inputs.property "forge_version", project.ext.forge
+    inpu
