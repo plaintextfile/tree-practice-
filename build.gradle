@@ -89,4 +89,5 @@ processResources {
     inputs.property "mod_url", project.ext.url
     inputs.property "mod_description", project.ext.description
     inputs.property "mod_author", project.ext.author
-    inputs.property "loader_versi
+    inputs.property "loader_version", project.ext.loader
+    inputs.propert
