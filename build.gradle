@@ -93,4 +93,5 @@ processResources {
     inputs.property "forge_version", project.ext.forge
     inputs.property "mc_version", project.ext.mc
 
-    // replace stuff in mods.toml and pack.m
+    // replace stuff in mods.toml and pack.mcmeta
+    from(sourceSets.main.resources.srcD
