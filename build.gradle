@@ -100,4 +100,5 @@ processResources {
 
         expand (
 
+                'mod_id': project.ext.id,
            
