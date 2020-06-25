@@ -102,4 +102,4 @@ processResources {
 
                 'mod_id': project.ext.id,
                 'mod_name': project.ext.name,
-       
+                'mod_name2': project.ext.name.replaceAll("\\s"
