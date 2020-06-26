@@ -105,4 +105,5 @@ processResources {
                 'mod_name2': project.ext.name.replaceAll("\\s", ""),
                 'mod_version': project.ext.version,
                 'mod_group': project.group,
-                'mod_url': projec
+                'mod_url': project.ext.url,
+                'mod_description': proje
