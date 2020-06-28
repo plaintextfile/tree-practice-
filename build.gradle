@@ -108,4 +108,5 @@ processResources {
                 'mod_url': project.ext.url,
                 'mod_description': project.ext.description,
                 'mod_author': project.ext.author,
-                'loader_versio
+                'loader_version': project.ext.loader,
+                
