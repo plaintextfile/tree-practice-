@@ -106,4 +106,5 @@ processResources {
                 'mod_version': project.ext.version,
                 'mod_group': project.group,
                 'mod_url': project.ext.url,
-                'mod_description': proje
+                'mod_description': project.ext.description,
+                'mod_aut
