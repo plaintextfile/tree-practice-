@@ -114,4 +114,4 @@ processResources {
         )
     }
 
-    // copy everyth
+    // copy everything else except mods.toml and pack.mcmeta
