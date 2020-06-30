@@ -111,3 +111,7 @@ processResources {
                 'loader_version': project.ext.loader,
                 'forge_version': project.ext.forge,
                 'mc_version': project.ext.mc
+        )
+    }
+
+    // copy everyth
