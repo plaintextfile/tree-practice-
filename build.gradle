@@ -115,3 +115,4 @@ processResources {
     }
 
     // copy everything else except mods.toml and pack.mcmeta
+    from(sourceSets.main.resources.srcDirs
