@@ -123,4 +123,4 @@ processResources {
 
 ext.jarAttributes = [
 
-    
+        "Specification-Title"           
