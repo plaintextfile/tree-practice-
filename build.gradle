@@ -125,4 +125,5 @@ ext.jarAttributes = [
 
         "Specification-Title"           : project.id,
         "Specification-Version"         : project.ext.version,
-        "Specification-Vendor"          : project.auth
+        "Specification-Vendor"          : project.author.toLowerCase(),
+        "Implementation-Title"        
