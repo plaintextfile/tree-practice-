@@ -130,4 +130,4 @@ ext.jarAttributes = [
         "Implementation-Version"        : project.ext.version,
         "Implementation-Vendor"         : project.author.toLowerCase(),
         "Implementation-Vendor-Id"      : project.group,
-        "Im
+        "Implementation-URL"            : projec
