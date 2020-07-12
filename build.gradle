@@ -136,4 +136,7 @@ ext.jarAttributes = [
 
 def createJarTask(def name, def type, def sources) {
 
-    return tasks.cre
+    return tasks.create(name, Jar) {
+
+        from sources
+     
