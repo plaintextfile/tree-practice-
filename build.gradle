@@ -131,4 +131,7 @@ ext.jarAttributes = [
         "Implementation-Vendor"         : project.author.toLowerCase(),
         "Implementation-Vendor-Id"      : project.group,
         "Implementation-URL"            : project.url,
-        "Implementation-Timestamp"      : new Date().format("yyyy-MM-dd'T'HH:mm
+        "Implementation-Timestamp"      : new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+]
+
+def createJarTask(def name, def type,
