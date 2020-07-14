@@ -143,4 +143,8 @@ def createJarTask(def name, def type, def sources) {
 
         manifest { attributes(project.jarAttributes) }
         dependsOn classes
-  
+        group 'jar'
+    }
+}
+
+def createS
