@@ -147,4 +147,6 @@ def createJarTask(def name, def type, def sources) {
     }
 }
 
-def createS
+def createSignJarTask(def name, def jarTask) {
+
+    return
