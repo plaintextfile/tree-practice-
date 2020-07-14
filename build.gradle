@@ -141,4 +141,6 @@ def createJarTask(def name, def type, def sources) {
         from sources
         classifier = type
 
-        manifest { attributes(projec
+        manifest { attributes(project.jarAttributes) }
+        dependsOn classes
+  
