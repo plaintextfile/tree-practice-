@@ -149,4 +149,4 @@ def createJarTask(def name, def type, def sources) {
 
 def createSignJarTask(def name, def jarTask) {
 
-    return
+    return tasks.create(name, net.minecraftforge.gr
