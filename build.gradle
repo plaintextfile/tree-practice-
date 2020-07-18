@@ -153,4 +153,7 @@ def createSignJarTask(def name, def jarTask) {
 
         onlyIf {
 
-            project.hasProperty('keyStor
+            project.hasProperty('keyStore')
+        }
+
+        keyStore = project.fin
