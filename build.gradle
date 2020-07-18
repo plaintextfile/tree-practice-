@@ -151,4 +151,6 @@ def createSignJarTask(def name, def jarTask) {
 
     return tasks.create(name, net.minecraftforge.gradle.common.task.SignJar) {
 
-     
+        onlyIf {
+
+            project.hasProperty('keyStor
