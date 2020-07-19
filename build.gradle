@@ -159,3 +159,4 @@ def createSignJarTask(def name, def jarTask) {
         keyStore = project.findProperty('keyStore')
         alias = project.findProperty('keyStoreAlias')
         storePass = project.findProperty('keyStorePass')
+        keyPass = project.findProperty('keyStor
