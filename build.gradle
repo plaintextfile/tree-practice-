@@ -163,4 +163,10 @@ def createSignJarTask(def name, def jarTask) {
         inputFile = jarTask.archivePath
         outputFile = jarTask.archivePath
         dependsOn jarTask
-        gr
+        group 'jar'
+    }
+}
+
+jar {
+
+    from 
