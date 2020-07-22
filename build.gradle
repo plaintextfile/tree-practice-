@@ -162,4 +162,5 @@ def createSignJarTask(def name, def jarTask) {
         keyPass = project.findProperty('keyStoreKeyPass')
         inputFile = jarTask.archivePath
         outputFile = jarTask.archivePath
-  
+        dependsOn jarTask
+        gr
