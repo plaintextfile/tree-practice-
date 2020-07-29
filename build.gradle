@@ -170,4 +170,6 @@ def createSignJarTask(def name, def jarTask) {
 jar {
 
     from sourceSets.main.output.classesDirs
-    fro
+    from sourceSets.main.output.resourcesDir
+
+  
