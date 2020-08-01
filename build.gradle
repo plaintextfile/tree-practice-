@@ -172,4 +172,8 @@ jar {
     from sourceSets.main.output.classesDirs
     from sourceSets.main.output.resourcesDir
 
-    manifest { attributes(project.jar
+    manifest { attributes(project.jarAttributes) }
+    group 'jar'
+}
+
+createJa
