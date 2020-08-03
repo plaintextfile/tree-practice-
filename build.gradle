@@ -176,4 +176,4 @@ jar {
     group 'jar'
 }
 
-createJa
+createJarTask("sourceJar", "sources", sourceSets.main.allSo
