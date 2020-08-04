@@ -176,4 +176,5 @@ jar {
     group 'jar'
 }
 
-createJarTask("sourceJar", "sources", sourceSets.main.allSo
+createJarTask("sourceJar", "sources", sourceSets.main.allSource)
+createJarTask("javadocJar", 
