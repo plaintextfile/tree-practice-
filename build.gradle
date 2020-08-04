@@ -177,4 +177,6 @@ jar {
 }
 
 createJarTask("sourceJar", "sources", sourceSets.main.allSource)
-createJarTask("javadocJar", 
+createJarTask("javadocJar", "javadoc", javadoc)
+
+createSignJarTask("signJ
