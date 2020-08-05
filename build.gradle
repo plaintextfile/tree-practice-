@@ -180,4 +180,5 @@ createJarTask("sourceJar", "sources", sourceSets.main.allSource)
 createJarTask("javadocJar", "javadoc", javadoc)
 
 createSignJarTask("signJar", jar)
-createSignJarTask("signSourceJar"
+createSignJarTask("signSourceJar", sourceJar)
+createSignJarTask("sig
