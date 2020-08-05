@@ -181,4 +181,6 @@ createJarTask("javadocJar", "javadoc", javadoc)
 
 createSignJarTask("signJar", jar)
 createSignJarTask("signSourceJar", sourceJar)
-createSignJarTask("sig
+createSignJarTask("signJavadocJar", javadocJar)
+
+// finalize all jar buil
