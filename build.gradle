@@ -183,4 +183,5 @@ createSignJarTask("signJar", jar)
 createSignJarTask("signSourceJar", sourceJar)
 createSignJarTask("signJavadocJar", javadocJar)
 
-// finalize all jar buil
+// finalize all jar build tasks with a signing task
+def jarTasks = tasks
