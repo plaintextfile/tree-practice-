@@ -185,4 +185,4 @@ createSignJarTask("signJavadocJar", javadocJar)
 
 // finalize all jar build tasks with a signing task
 def jarTasks = tasks.findAll { task -> !task.name.startsWith('sign') && task.name.toLowerCase().contains("jar")}
-ja
+jarTasks.each { task -> task.finalizedBy tasks.getByPath("s
