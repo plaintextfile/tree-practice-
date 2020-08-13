@@ -187,3 +187,7 @@ createSignJarTask("signJavadocJar", javadocJar)
 def jarTasks = tasks.findAll { task -> !task.name.startsWith('sign') && task.name.toLowerCase().contains("jar")}
 jarTasks.each { task -> task.finalizedBy tasks.getByPath("sign" + task.name.substring(0, 1).toUpperCase() + task.name.substring(1))}
 
+artifacts {
+
+//    archives sourceJar
+//   
