@@ -190,4 +190,9 @@ jarTasks.each { task -> task.finalizedBy tasks.getByPath("sign" + task.name.subs
 artifacts {
 
 //    archives sourceJar
-//   
+//    archives javadocJar
+}
+
+publishing {
+
+    publica
