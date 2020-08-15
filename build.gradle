@@ -197,4 +197,6 @@ publishing {
 
     publications {
 
-        mavenJava (MavenP
+        mavenJava (MavenPublication) {
+
+//            artifact so
