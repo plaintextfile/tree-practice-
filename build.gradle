@@ -195,4 +195,6 @@ artifacts {
 
 publishing {
 
-    publica
+    publications {
+
+        mavenJava (MavenP
