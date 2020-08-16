@@ -202,4 +202,8 @@ publishing {
 //            artifact sourceJar
 //            artifact javadocJar
             from components.java
-    
+        }
+    }
+}
+
+signing { sign pu
