@@ -201,4 +201,5 @@ publishing {
 
 //            artifact sourceJar
 //            artifact javadocJar
- 
+            from components.java
+    
