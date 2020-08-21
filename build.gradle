@@ -209,4 +209,5 @@ publishing {
 signing { sign publishing.publications.mavenJava }
 
 // general signing task runs before sources jar is signed otherwise
-signMavenJavaPublication.de
+signMavenJavaPublication.dependsOn signSourceJar
+// jar is otherwi
