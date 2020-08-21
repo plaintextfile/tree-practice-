@@ -208,4 +208,5 @@ publishing {
 
 signing { sign publishing.publications.mavenJava }
 
-// general signing task runs before sources jar i
+// general signing task runs before sources jar is signed otherwise
+signMavenJavaPublication.de
