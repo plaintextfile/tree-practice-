@@ -31,4 +31,6 @@ echo location of your Java installation.
 
 goto fail
 
-:findJavaFromJav
+:findJavaFromJavaHome
+set JAVA_HOME=%JAVA_HOME:"=%
+set 
