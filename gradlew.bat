@@ -50,4 +50,5 @@ goto fail
 
 if not "%OS%" == "Windows_NT" goto win9xME_args
 
-:win9xM
+:win9xME_args
+@rem Slurp the command li
