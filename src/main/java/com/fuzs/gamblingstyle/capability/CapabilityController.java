@@ -1,1 +1,3 @@
-package com.fuzs.gamblingstyle.cap
+package com.fuzs.gamblingstyle.capability;
+
+import com.fuzs.gamblingstyle.GamblingStyle;
