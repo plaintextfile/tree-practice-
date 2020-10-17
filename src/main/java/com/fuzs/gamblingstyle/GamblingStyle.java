@@ -52,3 +52,6 @@ public class GamblingStyle {
         NetworkHandler.get().registerMessage(CSyncTradingInfoMessage.class, Side.SERVER);
         NetworkHandler.get().registerMessage(CSelectedRecipeMessage.class, Side.SERVER);
         NetworkHandler.get().registerMessage(CMoveIngredientsMessage.class, Side.SERVER);
+    }
+
+}
