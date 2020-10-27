@@ -7,4 +7,5 @@ import com.fuzs.gamblingstyle.capability.core.CapabilityDispatcher;
 import com.fuzs.gamblingstyle.capability.core.CapabilityStorage;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.ent
+import net.minecraft.entity.IMerchant;
+import net.minecraft.u
