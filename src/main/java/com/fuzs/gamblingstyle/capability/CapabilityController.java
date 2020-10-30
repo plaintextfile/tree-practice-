@@ -8,4 +8,5 @@ import com.fuzs.gamblingstyle.capability.core.CapabilityStorage;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IMerchant;
-import net.minecraft.u
+import net.minecraft.util.ResourceLocation;
+import net.minecraftfo
