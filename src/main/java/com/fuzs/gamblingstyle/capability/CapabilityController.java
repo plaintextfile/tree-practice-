@@ -10,4 +10,4 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IMerchant;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.capabilities.Capability;
-imp
+import net.minecraftforge.common.capabilities
