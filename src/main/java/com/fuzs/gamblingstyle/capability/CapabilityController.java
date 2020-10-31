@@ -11,4 +11,5 @@ import net.minecraft.entity.IMerchant;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityInject;
-import net.minecraftforge.common.cap
+import net.minecraftforge.common.capabilities.CapabilityManager;
+import net.m
