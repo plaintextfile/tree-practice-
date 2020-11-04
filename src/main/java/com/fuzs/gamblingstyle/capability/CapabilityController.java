@@ -13,4 +13,5 @@ import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityInject;
 import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
-import net.minecraftfor
+import net.minecraftforge.event.AttachCapabilitiesEvent;
+import net.mi
