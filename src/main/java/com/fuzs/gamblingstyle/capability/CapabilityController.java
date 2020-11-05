@@ -16,4 +16,6 @@ import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-public class CapabilityContro
+public class CapabilityController {
+
+    @CapabilityInject(ITradingInfo.cla
