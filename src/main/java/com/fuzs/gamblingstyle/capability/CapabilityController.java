@@ -14,4 +14,4 @@ import net.minecraftforge.common.capabilities.CapabilityInject;
 import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
-import net.mi
+import net.minecraftforge.fml.common.eventhandler.SubscribeEv
