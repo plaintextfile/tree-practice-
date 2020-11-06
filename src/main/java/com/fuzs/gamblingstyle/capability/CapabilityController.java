@@ -19,4 +19,6 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class CapabilityController {
 
     @CapabilityInject(ITradingInfo.class)
-    public static final Capability<Tradin
+    public static final Capability<TradingInfo> TRADING_INFO_CAPABILITY = null;
+
+    publi
