@@ -18,4 +18,5 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class CapabilityController {
 
-    @CapabilityInject(ITradingInfo.cla
+    @CapabilityInject(ITradingInfo.class)
+    public static final Capability<Tradin
