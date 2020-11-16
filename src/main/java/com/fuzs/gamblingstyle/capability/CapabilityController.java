@@ -23,4 +23,7 @@ public class CapabilityController {
 
     public CapabilityController() {
 
-        CapabilityManager.INSTANCE.register(ITradingInfo.class, new CapabilityStorage<>(), Trad
+        CapabilityManager.INSTANCE.register(ITradingInfo.class, new CapabilityStorage<>(), TradingInfo::new);
+    }
+
+    @SuppressWarnings("unus
