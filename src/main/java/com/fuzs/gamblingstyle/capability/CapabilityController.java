@@ -26,4 +26,6 @@ public class CapabilityController {
         CapabilityManager.INSTANCE.register(ITradingInfo.class, new CapabilityStorage<>(), TradingInfo::new);
     }
 
-    @SuppressWarnings("unus
+    @SuppressWarnings("unused")
+    @SubscribeEvent
+    public void onA
