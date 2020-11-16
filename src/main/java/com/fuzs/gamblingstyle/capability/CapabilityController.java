@@ -28,4 +28,6 @@ public class CapabilityController {
 
     @SuppressWarnings("unused")
     @SubscribeEvent
-    public void onAttachCapabilities(final AttachC
+    public void onAttachCapabilities(final AttachCapabilitiesEvent<Entity> evt) {
+
+        if (evt.get
