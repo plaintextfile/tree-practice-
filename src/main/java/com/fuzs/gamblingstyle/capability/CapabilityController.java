@@ -28,4 +28,4 @@ public class CapabilityController {
 
     @SuppressWarnings("unused")
     @SubscribeEvent
-    public void onA
+    public void onAttachCapabilities(final AttachC
