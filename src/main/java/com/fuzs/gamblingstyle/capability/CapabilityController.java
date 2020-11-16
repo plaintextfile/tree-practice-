@@ -23,4 +23,4 @@ public class CapabilityController {
 
     public CapabilityController() {
 
-        Capab
+        CapabilityManager.INSTANCE.register(ITra
