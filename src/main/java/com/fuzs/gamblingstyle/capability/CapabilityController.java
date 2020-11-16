@@ -23,4 +23,4 @@ public class CapabilityController {
 
     public CapabilityController() {
 
-        CapabilityManager.INSTANCE.register(ITra
+        CapabilityManager.INSTANCE.register(ITradingInfo.class, new CapabilityStorage<>(), Trad
