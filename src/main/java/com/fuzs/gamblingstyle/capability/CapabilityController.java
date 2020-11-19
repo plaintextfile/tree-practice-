@@ -30,4 +30,6 @@ public class CapabilityController {
     @SubscribeEvent
     public void onAttachCapabilities(final AttachCapabilitiesEvent<Entity> evt) {
 
-        if (evt.getObject() instanceof EntityLivingBase && 
+        if (evt.getObject() instanceof EntityLivingBase && evt.getObject() instanceof IMerchant) {
+
+    
