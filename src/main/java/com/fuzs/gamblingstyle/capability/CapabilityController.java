@@ -32,4 +32,4 @@ public class CapabilityController {
 
         if (evt.getObject() instanceof EntityLivingBase && evt.getObject() instanceof IMerchant) {
 
-            evt.addCapability(new ResourceLocation(Gamblin
+            evt.addCapability(new ResourceLocation(GamblingStyle.MODID, "trading_info"), new CapabilityDispatcher<>(new TradingInfo(), TRADING_
