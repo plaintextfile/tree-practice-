@@ -34,4 +34,6 @@ public class CapabilityController {
 
             evt.addCapability(new ResourceLocation(GamblingStyle.MODID, "trading_info"), new CapabilityDispatcher<>(new TradingInfo(), TRADING_INFO_CAPABILITY));
         }
-    
+    }
+
+    public static <T> T getCapabil
