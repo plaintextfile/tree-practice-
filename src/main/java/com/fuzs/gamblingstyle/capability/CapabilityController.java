@@ -36,4 +36,6 @@ public class CapabilityController {
         }
     }
 
-    public static <T> T getCapability(ICapabilityProvider provider, Capabi
+    public static <T> T getCapability(ICapabilityProvider provider, Capability<T> cap) {
+
+        return pro
