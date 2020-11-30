@@ -38,4 +38,7 @@ public class CapabilityController {
 
     public static <T> T getCapability(ICapabilityProvider provider, Capability<T> cap) {
 
-        return pro
+        return provider.getCapability(cap, null);
+    }
+
+}
