@@ -43,3 +43,25 @@ public class TradingInfo implements ITradingInfo {
     public void setFavoriteTrades(byte[] favoriteTrades) {
 
         this.favoriteTrades = favoriteTrades;
+    }
+
+    @Override
+    public NBTTagCompound serializeNBT() {
+
+        NBTTagCompound compound = new NBTTagCompound();
+        compound.setByte("LastTradeIndex", (byte) this.lastTradeIndex);
+        compound.setByte("FilterMode", (byte) this.filterMode.ordinal());
+        compound.setByteArray("FavoriteTrades", this.favoriteTrades);
+
+        return compound;
+    }
+
+    @Override
+    public void deserializeNBT(NBTTagCompound compound) {
+
+        this.lastTradeIndex = compound.getByte("LastTradeIndex");
+        this.filterMode = FilterMode.values()[compound.getByte("FilterMode")];
+        this.favoriteTrades = compound.getByteArray("FavoriteTrades");
+    }
+
+}
