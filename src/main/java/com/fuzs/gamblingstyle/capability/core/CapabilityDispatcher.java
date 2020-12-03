@@ -23,3 +23,40 @@ public class CapabilityDispatcher<T extends INBTSerializable<NBTTagCompound>> im
      * capability object
      */
     private final T storage;
+
+    /**
+     * @param storage object
+     * @param capability wrapper
+     */
+    public CapabilityDispatcher(T storage, Capability<T> capability) {
+
+        this.storage = storage;
+        this.capability = capability;
+    }
+
+    @Override
+    public boolean hasCapability(@Nonnull Capability<?> capability, EnumFacing facing) {
+
+        return capability == this.capability;
+    }
+
+    @SuppressWarnings("unchecked")
+    @Override
+    public <S> S getCapability(@Nonnull Capability<S> capability, EnumFacing facing) {
+
+        return capability == this.capability ? (S) this.storage : null;
+    }
+
+    @Override
+    public NBTTagCompound serializeNBT() {
+
+        return this.storage.serializeNBT();
+    }
+
+    @Override
+    public void deserializeNBT(NBTTagCompound nbt) {
+
+        this.storage.deserializeNBT(nbt);
+    }
+
+}
