@@ -13,4 +13,6 @@ import net.minecraftforge.common.util.INBTSerializable;
 public class CapabilityStorage<T extends INBTSerializable<NBTTagCompound>> implements Capability.IStorage<T> {
 
     @Override
-    public NBTBase writeNBT(Capability<T> capability, T i
+    public NBTBase writeNBT(Capability<T> capability, T instance, EnumFacing side) {
+
+        return instan
