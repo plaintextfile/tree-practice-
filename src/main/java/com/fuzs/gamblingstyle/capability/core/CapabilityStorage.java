@@ -19,3 +19,4 @@ public class CapabilityStorage<T extends INBTSerializable<NBTTagCompound>> imple
     }
 
     @Override
+    public void readNBT(Capability<T> capability,
