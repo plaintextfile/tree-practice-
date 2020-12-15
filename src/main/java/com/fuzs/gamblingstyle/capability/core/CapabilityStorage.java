@@ -15,4 +15,7 @@ public class CapabilityStorage<T extends INBTSerializable<NBTTagCompound>> imple
     @Override
     public NBTBase writeNBT(Capability<T> capability, T instance, EnumFacing side) {
 
-        return instan
+        return instance.serializeNBT();
+    }
+
+    @Override
