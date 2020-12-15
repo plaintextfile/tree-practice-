@@ -10,4 +10,4 @@ import net.minecraftforge.common.util.INBTSerializable;
  * serializer for capability, has to be provided when registering
  * @param <T> capability class
  */
-public class CapabilityStorage<T exte
+public class CapabilityStorage<T extends INBTSerializable<NBTTagCompound>> implem
