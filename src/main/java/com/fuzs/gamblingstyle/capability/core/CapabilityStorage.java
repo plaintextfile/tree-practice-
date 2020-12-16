@@ -21,4 +21,6 @@ public class CapabilityStorage<T extends INBTSerializable<NBTTagCompound>> imple
     @Override
     public void readNBT(Capability<T> capability, T instance, EnumFacing side, NBTBase nbt) {
 
-        if (nbt instanceof NBTTagCompound
+        if (nbt instanceof NBTTagCompound) {
+
+            instance.deserializeNBT
