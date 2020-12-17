@@ -92,3 +92,22 @@ public class GhostTrade {
             }
         }
     }
+
+    private ItemStack findHoveredContents(int mouseX, int mouseY, int left, int top) {
+
+        ItemStack itemstack = ItemStack.EMPTY;
+        for (int i = 0; i < this.recipe.length; i++) {
+
+            int[] slotCoordinates = this.slotCoordinates[i];
+            int posX = slotCoordinates[0] + left;
+            int posY = slotCoordinates[1] + top;
+            if (mouseX >= posX && mouseY >= posY && mouseX < posX + 16 && mouseY < posY + 16) {
+
+                itemstack = this.recipe[i];
+            }
+        }
+
+        return itemstack;
+    }
+
+}
