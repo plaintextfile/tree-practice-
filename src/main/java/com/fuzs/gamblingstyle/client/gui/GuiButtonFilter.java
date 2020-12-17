@@ -1,4 +1,5 @@
 package com.fuzs.gamblingstyle.client.gui;
 
 import com.fuzs.gamblingstyle.GamblingStyle;
-import com.fuzs.gamblings
+import com.fuzs.gamblingstyle.capability.container.ITradingInfo;
+impor
