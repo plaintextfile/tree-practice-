@@ -25,4 +25,6 @@ public class CapabilityStorage<T extends INBTSerializable<NBTTagCompound>> imple
 
             instance.deserializeNBT((NBTTagCompound) nbt);
         }
-    
+    }
+
+}
