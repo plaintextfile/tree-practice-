@@ -2,4 +2,4 @@ package com.fuzs.gamblingstyle.client.gui;
 
 import com.fuzs.gamblingstyle.GamblingStyle;
 import com.fuzs.gamblingstyle.capability.container.ITradingInfo;
-impor
+import com.fuzs.gamblingstyle.client.gui.core.ITooltipButton
