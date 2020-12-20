@@ -6,4 +6,5 @@ import com.fuzs.gamblingstyle.client.gui.core.ITooltipButton;
 import com.google.common.collect.Lists;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
-imp
+import net.minecraft.client.gui.GuiScreen;
+im
