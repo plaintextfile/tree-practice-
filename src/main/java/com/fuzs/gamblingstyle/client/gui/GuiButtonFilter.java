@@ -10,4 +10,7 @@ import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TextComponentTra
+import net.minecraft.util.text.TextComponentTranslation;
+
+import javax.annotation.Nonnull;
+imp
