@@ -15,4 +15,4 @@ import net.minecraft.util.text.TextComponentTranslation;
 import javax.annotation.Nonnull;
 import java.util.List;
 
-public class 
+public class GuiButtonFilter extends GuiButton imp
