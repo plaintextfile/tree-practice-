@@ -21,4 +21,4 @@ public class GuiButtonFilter extends GuiButton implements ITooltipButton {
 
     private ITradingInfo.FilterMode filterMode;
 
-    public GuiBu
+    public GuiButtonFilter(int buttonId, int x, int y, ITradingInf
