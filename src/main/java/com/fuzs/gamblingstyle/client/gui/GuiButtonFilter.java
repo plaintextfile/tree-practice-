@@ -19,4 +19,6 @@ public class GuiButtonFilter extends GuiButton implements ITooltipButton {
 
     private static final ResourceLocation FILTER_BUTTON = new ResourceLocation(GamblingStyle.MODID, "textures/gui/container/merchant_filter.png");
 
-    pri
+    private ITradingInfo.FilterMode filterMode;
+
+    public GuiBu
