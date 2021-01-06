@@ -17,4 +17,4 @@ import java.util.List;
 
 public class GuiButtonFilter extends GuiButton implements ITooltipButton {
 
-    private static final ResourceLocation FILTER_BUTTON = new Resource
+    private static final ResourceLocation FILTER_BUTTON = new ResourceLocation(GamblingStyle.MODID, "textures
