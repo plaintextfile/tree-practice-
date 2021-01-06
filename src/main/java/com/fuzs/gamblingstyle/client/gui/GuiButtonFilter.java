@@ -24,4 +24,8 @@ public class GuiButtonFilter extends GuiButton implements ITooltipButton {
     public GuiButtonFilter(int buttonId, int x, int y, ITradingInfo.FilterMode filterMode) {
 
         super(buttonId, x, y, 10, 10, "");
-        this.filter
+        this.filterMode = filterMode;
+    }
+
+    @Override
+    p
