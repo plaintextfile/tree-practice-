@@ -39,4 +39,4 @@ public class GuiButtonFilter extends GuiButton implements ITooltipButton {
 
         if (this.visible) {
 
-            thi
+            this.hovered = mouseX >= this.x && mouseY
