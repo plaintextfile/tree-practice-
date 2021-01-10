@@ -31,4 +31,8 @@ public class GuiButtonFilter extends GuiButton implements ITooltipButton {
     public void setPosition(int posX, int posY) {
 
         this.x = posX;
-        this.y = posY
+        this.y = posY;
+    }
+
+    @Override
+    public void drawButton(@No
