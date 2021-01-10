@@ -37,4 +37,6 @@ public class GuiButtonFilter extends GuiButton implements ITooltipButton {
     @Override
     public void drawButton(@Nonnull Minecraft mc, int mouseX, int mouseY, float partialTicks) {
 
-      
+        if (this.visible) {
+
+            thi
