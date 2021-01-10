@@ -28,4 +28,4 @@ public class GuiButtonFilter extends GuiButton implements ITooltipButton {
     }
 
     @Override
-    p
+    public void setPosition(int posX, int posY) 
