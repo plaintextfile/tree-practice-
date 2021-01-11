@@ -41,4 +41,4 @@ public class GuiButtonFilter extends GuiButton implements ITooltipButton {
 
             this.hovered = mouseX >= this.x && mouseY >= this.y && mouseX < this.x + this.width && mouseY < this.y + this.height;
 
-    
+            mc.getTextureManager().bindTexture(F
