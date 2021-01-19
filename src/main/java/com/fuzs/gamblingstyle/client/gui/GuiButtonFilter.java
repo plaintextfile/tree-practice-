@@ -46,4 +46,5 @@ public class GuiButtonFilter extends GuiButton implements ITooltipButton {
 
             final int buttonSize = 10;
             int textureX = buttonSize * this.filterMode.ordinal();
-            int textureY = 
+            int textureY = buttonSize;
+            if (this.hovered) {
