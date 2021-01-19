@@ -45,4 +45,5 @@ public class GuiButtonFilter extends GuiButton implements ITooltipButton {
             GlStateManager.disableDepth();
 
             final int buttonSize = 10;
-            int textureX = buttonSize * this.filte
+            int textureX = buttonSize * this.filterMode.ordinal();
+            int textureY = 
