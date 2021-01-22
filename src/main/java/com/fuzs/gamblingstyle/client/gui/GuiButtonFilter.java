@@ -50,4 +50,6 @@ public class GuiButtonFilter extends GuiButton implements ITooltipButton {
             if (this.hovered) {
 
                 textureY += buttonSize;
-          
+            }
+
+            this.drawTexturedModalRect
