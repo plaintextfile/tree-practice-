@@ -53,4 +53,8 @@ public class GuiButtonFilter extends GuiButton implements ITooltipButton {
             }
 
             this.drawTexturedModalRect(this.x, this.y, textureX, textureY, this.width, this.height);
-            GlStateMan
+            GlStateManager.enableDepth();
+        }
+    }
+
+    
