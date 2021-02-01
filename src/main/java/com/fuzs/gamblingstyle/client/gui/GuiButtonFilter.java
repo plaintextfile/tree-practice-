@@ -64,4 +64,4 @@ public class GuiButtonFilter extends GuiButton implements ITooltipButton {
         return Lists.newArrayList(tooltipComponent.getUnformattedText());
     }
 
-    pu
+    public void cycleFilterMode(boolean s
