@@ -60,4 +60,5 @@ public class GuiButtonFilter extends GuiButton implements ITooltipButton {
     @Override
     public List<String> getToolTip(GuiScreen screen, int mouseX, int mouseY) {
 
-        ITextComponent tooltipComponent = new TextComponentTranslation("gui.button.show", new TextComponentTranslation(this.filterMode.key
+        ITextComponent tooltipComponent = new TextComponentTranslation("gui.button.show", new TextComponentTranslation(this.filterMode.key));
+        return Lists.newArrayList(tooltipC
