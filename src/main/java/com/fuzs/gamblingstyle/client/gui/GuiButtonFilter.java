@@ -67,4 +67,5 @@ public class GuiButtonFilter extends GuiButton implements ITooltipButton {
     public void cycleFilterMode(boolean skipFavorites) {
 
         int nextIndex = (this.filterMode.ordinal() + 1) % ITradingInfo.FilterMode.values().length;
-        this.filterMode = ITradingInfo.FilterMode.values()[nextIn
+        this.filterMode = ITradingInfo.FilterMode.values()[nextIndex];
+        if (skipFavorites && this.f
