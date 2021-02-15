@@ -70,4 +70,8 @@ public class GuiButtonFilter extends GuiButton implements ITooltipButton {
         this.filterMode = ITradingInfo.FilterMode.values()[nextIndex];
         if (skipFavorites && this.filterMode == ITradingInfo.FilterMode.FAVORITES) {
 
-            this.cycleFilterM
+            this.cycleFilterMode(false);
+        }
+    }
+
+    public ITradingIn
