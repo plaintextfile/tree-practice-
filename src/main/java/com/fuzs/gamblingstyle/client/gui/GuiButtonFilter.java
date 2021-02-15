@@ -64,4 +64,6 @@ public class GuiButtonFilter extends GuiButton implements ITooltipButton {
         return Lists.newArrayList(tooltipComponent.getUnformattedText());
     }
 
-    public void cycleFilterMode(boolean s
+    public void cycleFilterMode(boolean skipFavorites) {
+
+        int nextIndex =
