@@ -76,4 +76,7 @@ public class GuiButtonFilter extends GuiButton implements ITooltipButton {
 
     public ITradingInfo.FilterMode getFilterMode() {
 
-        re
+        return this.filterMode;
+    }
+
+}
