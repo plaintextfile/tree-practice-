@@ -5,4 +5,5 @@ import com.fuzs.gamblingstyle.client.gui.core.ITooltipButton;
 import com.fuzs.gamblingstyle.client.gui.data.TradingRecipe;
 import com.google.common.collect.Lists;
 import net.minecraft.client.Minecraft;
-import net.min
+import net.minecraft.client.gui.GuiButton;
+import net.
