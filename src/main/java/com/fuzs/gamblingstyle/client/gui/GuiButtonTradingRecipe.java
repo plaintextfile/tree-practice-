@@ -12,4 +12,5 @@ import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextComponentTranslation;
-import net.minecraft.util.text.TextForma
+import net.minecraft.util.text.TextFormatting;
+import net.minecraftforge.f
