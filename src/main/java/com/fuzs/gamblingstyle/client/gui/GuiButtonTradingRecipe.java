@@ -20,4 +20,4 @@ import javax.annotation.Nonnull;
 import java.util.List;
 
 @SideOnly(Side.CLIENT)
-public class GuiButto
+public class GuiButtonTradingRecipe extends GuiButton implem
