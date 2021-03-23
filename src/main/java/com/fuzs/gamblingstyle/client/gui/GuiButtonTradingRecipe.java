@@ -19,4 +19,5 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nonnull;
 import java.util.List;
 
-@Sid
+@SideOnly(Side.CLIENT)
+public class GuiButto
