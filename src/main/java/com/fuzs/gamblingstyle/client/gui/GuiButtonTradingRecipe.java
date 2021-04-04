@@ -22,4 +22,4 @@ import java.util.List;
 @SideOnly(Side.CLIENT)
 public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton {
 
-    private static final R
+    private static final ResourceLocation RECIPE_BOOK = new R
