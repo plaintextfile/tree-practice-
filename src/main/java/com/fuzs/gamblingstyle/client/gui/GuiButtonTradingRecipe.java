@@ -24,4 +24,4 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
 
     private static final ResourceLocation RECIPE_BOOK = new ResourceLocation(GamblingStyle.MODID, "textures/gui/container/merchant_book.png");
 
-    pr
+    private final ItemStack[] recipe = {ItemStack.EMPTY
