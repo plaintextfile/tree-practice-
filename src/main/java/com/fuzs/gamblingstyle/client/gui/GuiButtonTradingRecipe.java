@@ -26,4 +26,6 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
 
     private final ItemStack[] recipe = {ItemStack.EMPTY, ItemStack.EMPTY, ItemStack.EMPTY};
     private int recipeId;
-    private boolean is
+    private boolean isSelectedRecipe;
+    private boolean hasContents;
+    p
