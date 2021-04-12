@@ -22,4 +22,6 @@ import java.util.List;
 @SideOnly(Side.CLIENT)
 public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton {
 
-    private static final ResourceLocation RECIPE_BOOK = new ResourceLocation(GamblingStyle.MODID, "textures/gui
+    private static final ResourceLocation RECIPE_BOOK = new ResourceLocation(GamblingStyle.MODID, "textures/gui/container/merchant_book.png");
+
+    pr
