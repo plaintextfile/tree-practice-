@@ -29,4 +29,6 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
     private boolean isSelectedRecipe;
     private boolean hasContents;
     private boolean soldOut;
-    private boole
+    private boolean favorite;
+
+    public GuiButtonTradi
