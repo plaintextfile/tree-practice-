@@ -33,4 +33,4 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
 
     public GuiButtonTradingRecipe(int id, int posX, int posY) {
 
-    
+        super(id, posX, posY, 84, 22, "");
