@@ -31,4 +31,6 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
     private boolean soldOut;
     private boolean favorite;
 
-    public GuiButtonTradi
+    public GuiButtonTradingRecipe(int id, int posX, int posY) {
+
+    
