@@ -37,3 +37,4 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
         this.visible = false;
     }
 
+    public void setContents(int id, Trading
