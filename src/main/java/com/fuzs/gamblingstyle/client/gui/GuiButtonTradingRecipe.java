@@ -39,4 +39,5 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
 
     public void setContents(int id, TradingRecipe recipe, boolean soldOut) {
 
-        this.re
+        this.recipeId = id;
+        this.recipe[0] = recipe
