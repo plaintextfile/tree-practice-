@@ -43,4 +43,5 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
         this.recipe[0] = recipe.getItemToBuy();
         this.recipe[1] = recipe.getSecondItemToBuy();
         this.recipe[2] = recipe.getItemToSell();
-        this.isSelectedR
+        this.isSelectedRecipe = recipe.isSelected();
+      
