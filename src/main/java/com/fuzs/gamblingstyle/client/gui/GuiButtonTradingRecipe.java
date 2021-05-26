@@ -46,4 +46,7 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
         this.isSelectedRecipe = recipe.isSelected();
         this.hasContents = recipe.hasRecipeContents();
         this.soldOut = soldOut;
-        this.favorite = rec
+        this.favorite = recipe.isFavorite();
+    }
+
+    public int getRecipeId() 
