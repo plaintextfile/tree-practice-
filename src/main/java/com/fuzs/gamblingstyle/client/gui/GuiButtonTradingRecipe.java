@@ -53,3 +53,6 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
 
         return this.recipeId;
     }
+
+    @Override
+    public void setPo
