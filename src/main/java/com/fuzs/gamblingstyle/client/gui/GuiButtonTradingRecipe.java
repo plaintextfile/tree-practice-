@@ -49,4 +49,7 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
         this.favorite = recipe.isFavorite();
     }
 
-    public int getRecipeId() 
+    public int getRecipeId() {
+
+        return this.recipeId;
+    }
