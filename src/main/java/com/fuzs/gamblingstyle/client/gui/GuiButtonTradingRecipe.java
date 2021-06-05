@@ -55,4 +55,4 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
     }
 
     @Override
-    public void setPo
+    public void setPosition(int posX, int posY) {
