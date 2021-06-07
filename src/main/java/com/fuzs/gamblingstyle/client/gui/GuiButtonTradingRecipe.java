@@ -63,4 +63,5 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
 
     public boolean mousePressedOnFavorite(int mouseX, int mouseY) {
 
-        fi
+        final int buttonSize = 9;
+        boolean pressed =
