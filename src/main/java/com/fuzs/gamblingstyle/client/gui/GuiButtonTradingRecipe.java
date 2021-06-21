@@ -65,4 +65,6 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
 
         final int buttonSize = 9;
         boolean pressed = this.enabled && this.visible && mouseX >= this.x - 3 && mouseY >= this.y + 6 && mouseX < this.x - 3 + buttonSize && mouseY < this.y + 6 + buttonSize;
-        if (press
+        if (pressed) {
+
+            this.favorite = !this.favorite
