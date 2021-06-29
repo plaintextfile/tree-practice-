@@ -76,4 +76,6 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
     @Override
     public void drawButton(@Nonnull Minecraft mc, int mouseX, int mouseY, float partialTicks) {
 
-        if (thi
+        if (this.visible) {
+
+            final int favoriteButtonSi
