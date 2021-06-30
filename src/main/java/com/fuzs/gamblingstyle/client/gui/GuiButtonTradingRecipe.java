@@ -78,4 +78,5 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
 
         if (this.visible) {
 
-            final int favoriteButtonSi
+            final int favoriteButtonSize = 9;
+            boolean isFavoriteHovered = mo
