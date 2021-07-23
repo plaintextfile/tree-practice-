@@ -79,4 +79,5 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
         if (this.visible) {
 
             final int favoriteButtonSize = 9;
-            boolean isFavoriteHovered = mouseX >= this.x - 3 && mouseY >= this.y + 6 && mouseX < this.x - 3 + favoriteButtonSize && mo
+            boolean isFavoriteHovered = mouseX >= this.x - 3 && mouseY >= this.y + 6 && mouseX < this.x - 3 + favoriteButtonSize && mouseY < this.y + 6 + favoriteButtonSize;
+          
