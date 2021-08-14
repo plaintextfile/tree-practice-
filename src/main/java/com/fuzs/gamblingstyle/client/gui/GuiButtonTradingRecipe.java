@@ -83,3 +83,5 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
             this.hovered = !isFavoriteHovered && mouseX >= this.x && mouseY >= this.y && mouseX < this.x + this.width && mouseY < this.y + this.height;
 
             RenderHelper.enableGUIStandardItemLighting();
+            GlStateManager.disableLighting();
+ 
