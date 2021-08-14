@@ -84,4 +84,4 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
 
             RenderHelper.enableGUIStandardItemLighting();
             GlStateManager.disableLighting();
- 
+            mc.getTextureManager().bindTexture(RECIPE
