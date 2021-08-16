@@ -87,4 +87,4 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
             mc.getTextureManager().bindTexture(RECIPE_BOOK);
 
             // draw background frame
-            
+            this.drawTexturedModalRect(this.x, this.y, 112, this
