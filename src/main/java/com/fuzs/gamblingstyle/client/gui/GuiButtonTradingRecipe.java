@@ -88,4 +88,6 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
 
             // draw background frame
             this.drawTexturedModalRect(this.x, this.y, 112, this.getTextureY(), this.width, this.height);
- 
+            if (this.soldOut) {
+
+            
