@@ -90,4 +90,4 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
             this.drawTexturedModalRect(this.x, this.y, 112, this.getTextureY(), this.width, this.height);
             if (this.soldOut) {
 
-                this.drawTexturedModalRect(this.x + 47, this
+                this.drawTexturedModalRect(this.x + 47, this.y + 3, this.hasContents ? 0 :
