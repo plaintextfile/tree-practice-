@@ -94,4 +94,4 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
             }
 
             // draw favorite button
-            this.d
+            this.drawTexturedModalRect(this.x - 3, this.y
