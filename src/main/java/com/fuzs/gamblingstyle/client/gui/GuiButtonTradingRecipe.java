@@ -97,4 +97,5 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
             this.drawTexturedModalRect(this.x - 3, this.y + 6, this.favorite ? 20 : 29, 166, favoriteButtonSize, favoriteButtonSize);
 
             // draw items
-            this.renderItemAndEffect(mc, this.recipe[0], this.x + 6, t
+            this.renderItemAndEffect(mc, this.recipe[0], this.x + 6, this.y + 2);
+            this.re
