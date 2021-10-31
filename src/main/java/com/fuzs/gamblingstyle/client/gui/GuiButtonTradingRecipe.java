@@ -101,4 +101,5 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
             this.renderItemAndEffect(mc, this.recipe[2], this.x + 61, this.y + 2);
             if (!this.recipe[1].isEmpty()) {
 
-                this.renderItemAndEffect(mc, this.recipe[1], t
+                this.renderItemAndEffect(mc, this.recipe[1], this.x + 27, this.y + 2);
+            }
