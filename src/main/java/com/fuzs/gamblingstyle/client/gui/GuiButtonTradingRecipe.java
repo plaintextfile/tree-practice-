@@ -104,4 +104,5 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
                 this.renderItemAndEffect(mc, this.recipe[1], this.x + 27, this.y + 2);
             }
 
-            GlStateManager.enable
+            GlStateManager.enableLighting();
+            RenderHelper
