@@ -107,4 +107,8 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
             GlStateManager.enableLighting();
             RenderHelper.disableStandardItemLighting();
         }
-    
+    }
+
+    private int getTextureY() {
+
+       
