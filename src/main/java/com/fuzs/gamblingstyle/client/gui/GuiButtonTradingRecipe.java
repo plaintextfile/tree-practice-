@@ -115,4 +115,7 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
         if (this.hovered) {
 
             textureY += 22;
-        
+        }
+
+        if (!this.hasContents) {
+
