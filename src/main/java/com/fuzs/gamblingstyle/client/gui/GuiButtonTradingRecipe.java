@@ -119,3 +119,7 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
 
         if (!this.hasContents) {
 
+            textureY += 88;
+        }
+
+     
