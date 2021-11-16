@@ -124,4 +124,7 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
 
         if (this.isSelectedRecipe) {
 
-      
+            textureY += 44;
+        }
+
+        return textu
