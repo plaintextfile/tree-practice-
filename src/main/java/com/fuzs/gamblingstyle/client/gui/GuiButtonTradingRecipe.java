@@ -127,4 +127,7 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
             textureY += 44;
         }
 
-        return textu
+        return textureY;
+    }
+
+    private void renderItemAndEffect(Minecr
