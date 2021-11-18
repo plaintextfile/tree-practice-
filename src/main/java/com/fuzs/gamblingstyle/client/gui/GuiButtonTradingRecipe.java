@@ -130,4 +130,6 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
         return textureY;
     }
 
-    private void renderItemAndEffect(Minecraft mc, ItemStack itemStack, int xP
+    private void renderItemAndEffect(Minecraft mc, ItemStack itemStack, int xPosition, int yPosition) {
+
+        mc.getRe
