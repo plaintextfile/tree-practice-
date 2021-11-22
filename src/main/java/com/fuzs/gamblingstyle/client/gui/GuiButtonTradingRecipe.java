@@ -132,4 +132,4 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
 
     private void renderItemAndEffect(Minecraft mc, ItemStack itemStack, int xPosition, int yPosition) {
 
-        mc.getRe
+        mc.getRenderItem().renderItemAndEffectIntoGUI(itemStack, x
