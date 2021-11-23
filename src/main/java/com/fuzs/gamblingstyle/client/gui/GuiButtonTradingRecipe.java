@@ -134,3 +134,6 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
 
         mc.getRenderItem().renderItemAndEffectIntoGUI(itemStack, xPosition, yPosition);
         mc.getRenderItem().renderItemOverlays(mc.fontRenderer, itemStack, xPosition, yPosition);
+    }
+
+    @SuppressWarnings("ConstantCo
