@@ -136,4 +136,6 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
         mc.getRenderItem().renderItemOverlays(mc.fontRenderer, itemStack, xPosition, yPosition);
     }
 
-    @SuppressWarnings("ConstantCo
+    @SuppressWarnings("ConstantConditions")
+    @Override
+    public List<
