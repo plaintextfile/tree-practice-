@@ -141,4 +141,5 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
     public List<String> getToolTip(GuiScreen screen, int mouseX, int mouseY) {
 
         ItemStack itemstack = this.getItemStackInRegion(mouseX, mouseY);
-        List<String> list = Lis
+        List<String> list = Lists.newArrayList();
+        if (!itemsta
