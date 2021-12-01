@@ -138,4 +138,6 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
 
     @SuppressWarnings("ConstantConditions")
     @Override
-    public List<String> getToolTip(GuiScreen screen, int mouseX,
+    public List<String> getToolTip(GuiScreen screen, int mouseX, int mouseY) {
+
+        ItemStack item
