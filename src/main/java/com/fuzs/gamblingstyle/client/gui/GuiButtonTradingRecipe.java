@@ -140,4 +140,5 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
     @Override
     public List<String> getToolTip(GuiScreen screen, int mouseX, int mouseY) {
 
-        ItemStack itemstack = this.getItemStackInRegion(mouseX, mouseY)
+        ItemStack itemstack = this.getItemStackInRegion(mouseX, mouseY);
+        List<String> list = Lis
