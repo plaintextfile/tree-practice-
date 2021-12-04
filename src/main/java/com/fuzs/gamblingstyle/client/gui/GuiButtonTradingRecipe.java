@@ -145,4 +145,4 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
         if (!itemstack.isEmpty()) {
 
             list = screen.getItemToolTip(itemstack);
-        } else 
+        } else if (this.soldOut && this.isPointInRegion(47, 
