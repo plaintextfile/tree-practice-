@@ -144,4 +144,5 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
         List<String> list = Lists.newArrayList();
         if (!itemstack.isEmpty()) {
 
-            list = screen.
+            list = screen.getItemToolTip(itemstack);
+        } else 
