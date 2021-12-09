@@ -148,3 +148,6 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
         } else if (this.soldOut && this.isPointInRegion(47, 3, 10, 15, mouseX, mouseY)) {
 
             list.add(new TextComponentTranslation("merchant.deprecated").getUnformattedText());
+        }
+
+        // helps with
