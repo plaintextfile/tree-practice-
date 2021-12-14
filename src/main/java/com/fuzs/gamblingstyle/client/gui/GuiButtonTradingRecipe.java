@@ -150,4 +150,5 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
             list.add(new TextComponentTranslation("merchant.deprecated").getUnformattedText());
         }
 
-        // helps with Quark which adds a blank line for drawing icons which are never drawn in the trading
+        // helps with Quark which adds a blank line for drawing icons which are never drawn in the trading menu
+        if (!list.isEmpty() && TextFo
