@@ -159,4 +159,4 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
         return list;
     }
 
-    private ItemStack 
+    private ItemStack getItemStackInRegion(int mouseX, int mous
