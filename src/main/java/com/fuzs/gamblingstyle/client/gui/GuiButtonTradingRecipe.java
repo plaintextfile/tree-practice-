@@ -151,4 +151,6 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
         }
 
         // helps with Quark which adds a blank line for drawing icons which are never drawn in the trading menu
-        if (!list.isEmpty() && TextFormatting.getTextWithoutFormattingCodes(list.get(list.size() - 1).trim()).isEmpty()
+        if (!list.isEmpty() && TextFormatting.getTextWithoutFormattingCodes(list.get(list.size() - 1).trim()).isEmpty()) {
+
+            list.remove(list.size() - 
