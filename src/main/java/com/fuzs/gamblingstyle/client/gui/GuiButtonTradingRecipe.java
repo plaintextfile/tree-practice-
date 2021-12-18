@@ -157,3 +157,6 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
         }
 
         return list;
+    }
+
+    private ItemStack 
