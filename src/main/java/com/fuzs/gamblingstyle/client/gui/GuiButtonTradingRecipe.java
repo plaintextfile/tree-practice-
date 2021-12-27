@@ -161,4 +161,6 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
 
     private ItemStack getItemStackInRegion(int mouseX, int mouseY) {
 
-        if (this.isPointInRegion(6, 2, 16, 16
+        if (this.isPointInRegion(6, 2, 16, 16, mouseX, mouseY)) {
+
+            
