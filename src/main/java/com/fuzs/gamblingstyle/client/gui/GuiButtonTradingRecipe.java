@@ -166,4 +166,5 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
             return this.recipe[0];
         } else if (this.isPointInRegion(27, 2, 16, 16, mouseX, mouseY)) {
 
-           
+            return this.recipe[1];
+        } else if (th
