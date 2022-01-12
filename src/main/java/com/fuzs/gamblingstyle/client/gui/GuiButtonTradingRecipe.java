@@ -172,4 +172,7 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
             return this.recipe[2];
         }
 
-        return ItemSta
+        return ItemStack.EMPTY;
+    }
+
+    private boolean 
