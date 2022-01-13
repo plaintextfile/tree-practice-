@@ -178,4 +178,5 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
     private boolean isPointInRegion(int rectX, int rectY, int rectWidth, int rectHeight, int pointX, int pointY) {
 
         pointX -= this.x;
-        pointY -= th
+        pointY -= this.y;
+        return pointX >= re
