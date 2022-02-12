@@ -122,3 +122,36 @@ public class GuiTradingBook extends Gui implements IGuiExtension {
         if (this.timesInventoryChanged != this.mc.player.inventory.getTimesChanged()) {
 
             this.countTradeMaterials(container);
+            this.timesInventoryChanged = this.mc.player.inventory.getTimesChanged();
+        }
+
+        if (this.clearSearch) {
+
+            this.searchField.setCursorPositionEnd();
+            this.searchField.setSelectionPos(0);
+        }
+
+        if (this.requiresRefresh) {
+
+            this.requiresRefresh = false;
+            if (this.tradingRecipeList != null && this.tradingRecipeList.size() == merchantrecipelist.size()) {
+
+                this.updateVisibleTrades(merchantrecipelist);
+            }
+        }
+    }
+
+    public void setRecipes(MerchantRecipeList merchantrecipelist, ContainerVillager container, byte[] favorites) {
+
+        this.tradingRecipeList = new TradingRecipeList(merchantrecipelist);
+        this.tradingRecipeList.get(this.selectedTradingRecipe).setSelected(true);
+        for (byte favorite : favorites) {
+
+            if (favorite < this.tradingRecipeList.size()) {
+
+                this.tradingRecipeList.get(favorite).favorite();
+            }
+        }
+
+        this.countTradeMaterials(container);
+        this.invalidate(true);
