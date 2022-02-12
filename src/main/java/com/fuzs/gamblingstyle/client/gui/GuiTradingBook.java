@@ -79,3 +79,46 @@ public class GuiTradingBook extends Gui implements IGuiExtension {
         for (int i = 0; i < this.tradeButtons.length; i++) {
 
             this.tradeButtons[i].setPosition(this.guiLeft + 10, this.guiTop + 24 + 22 * i);
+        }
+
+        if (!this.lastSearch.isEmpty()) {
+
+            this.lastSearch = "";
+            this.invalidate(true);
+        }
+    }
+
+    private void initSearchField() {
+
+        this.searchField = new GuiTextField(0, this.mc.fontRenderer, this.guiLeft + 9, this.guiTop + 9, 76, this.mc.fontRenderer.FONT_HEIGHT);
+        this.searchField.setMaxStringLength(50);
+        this.searchField.setEnableBackgroundDrawing(false);
+        this.searchField.setTextColor(16777215);
+    }
+
+    @Override
+    public void onGuiClosed() {
+
+        Keyboard.enableRepeatEvents(false);
+    }
+
+    public void setSelectedTradingRecipe(int recipeIndex) {
+
+        if (this.tradingRecipeList != null) {
+
+            this.tradingRecipeList.get(this.selectedTradingRecipe).setSelected(false);
+            this.selectedTradingRecipe = recipeIndex;
+            this.tradingRecipeList.get(this.selectedTradingRecipe).setSelected(true);
+            this.requiresRefresh = true;
+        } else {
+
+            this.selectedTradingRecipe = recipeIndex;
+        }
+    }
+
+    @Override
+    public void updateScreen(MerchantRecipeList merchantrecipelist, ContainerVillager container) {
+
+        if (this.timesInventoryChanged != this.mc.player.inventory.getTimesChanged()) {
+
+            this.countTradeMaterials(container);
