@@ -179,4 +179,7 @@ public class GuiButtonTradingRecipe extends GuiButton implements ITooltipButton 
 
         pointX -= this.x;
         pointY -= this.y;
-        return pointX >= rectX - 1 && pointX < rectX + rectWidth + 1 && pointY >= rectY - 1 && pointY < rectY + rectHeig
+        return pointX >= rectX - 1 && pointX < rectX + rectWidth + 1 && pointY >= rectY - 1 && pointY < rectY + rectHeight + 1;
+    }
+
+}
