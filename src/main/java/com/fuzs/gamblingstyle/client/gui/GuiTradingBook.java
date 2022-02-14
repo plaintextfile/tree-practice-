@@ -203,3 +203,49 @@ public class GuiTradingBook extends Gui implements IGuiExtension {
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
         this.renderScrollBar(mouseX, mouseY);
         RenderHelper.disableStandardItemLighting();
+        this.renderButtons(mouseX, mouseY, partialTicks);
+        GlStateManager.popMatrix();
+    }
+
+    private void renderScrollBar(int mouseX, int mouseY) {
+
+        if (this.tradingRecipeList == null) {
+
+            return;
+        }
+
+        boolean isClicked = Mouse.isButtonDown(0);
+        int recipes = this.tradingRecipeList.getActiveRecipeAmount();
+        int barPosition = (int) (136.0F / (float) Math.sqrt((float) Math.max(recipes - MAX_BUTTONS + 1, 1)));
+        int startX = this.guiLeft + 98;
+        int startY = this.guiTop + 21;
+        int endX = startX + 6;
+        int endY = startY + 136;
+        boolean scrollable = recipes > MAX_BUTTONS;
+        this.mc.getTextureManager().bindTexture(RECIPE_BOOK);
+        this.drawTexturedModalRect(startX, startY + (int) ((float) (endY - startY - barPosition) * this.currentScroll), scrollable ? 196 : 202, 0, 6, barPosition);
+        this.drawTexturedModalRect(startX, startY + barPosition + (int) ((float) (endY - startY - barPosition) * this.currentScroll), scrollable ? 196 : 202, 136, 6, 1); // end of stripe
+        if (!this.wasClicking && isClicked && mouseX >= startX && mouseY >= startY && mouseX < endX && mouseY < endY + 1) {
+
+            this.isScrolling = scrollable;
+        }
+
+        if (!isClicked) {
+
+            this.isScrolling = false;
+        }
+
+        this.wasClicking = isClicked;
+        if (this.isScrolling) {
+
+            this.currentScroll = ((float) (mouseY - startY) - 7.5F) / ((float) (endY - startY) - 15.0F);
+            this.currentScroll = MathHelper.clamp(this.currentScroll, 0.0F, 1.0F);
+            this.updateScrollPosition();
+        }
+    }
+
+    private void renderButtons(int mouseX, int mouseY, float partialTicks) {
+
+        this.hoveredButton = null;
+        this.filterButton.drawButton(this.mc, mouseX, mouseY, partialTicks);
+        for (GuiButtonTradingRecipe tradeButton : this.tradeButtons) {
