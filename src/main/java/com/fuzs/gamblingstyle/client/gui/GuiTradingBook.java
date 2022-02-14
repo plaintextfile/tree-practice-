@@ -155,3 +155,51 @@ public class GuiTradingBook extends Gui implements IGuiExtension {
 
         this.countTradeMaterials(container);
         this.invalidate(true);
+    }
+
+    public void countTradeMaterials(ContainerVillager container) {
+
+        if (this.tradingRecipeList != null) {
+
+            this.tradingRecipeList.countTradeMaterials(container);
+            this.requiresRefresh = true;
+        }
+    }
+
+    private void updateVisibleTrades(MerchantRecipeList merchantrecipelist) {
+
+        int scrollPosition = this.scrollPosition;
+        for (GuiButtonTradingRecipe tradeButton : this.tradeButtons) {
+
+            tradeButton.visible = false;
+            for (int i = scrollPosition; i < this.tradingRecipeList.size(); i++) {
+
+                TradingRecipe tradingRecipe = this.tradingRecipeList.get(i);
+                if (tradingRecipe.isVisible()) {
+
+                    tradeButton.setContents(i, tradingRecipe, merchantrecipelist.get(i).isRecipeDisabled());
+                    scrollPosition = i + 1;
+                    tradeButton.visible = true;
+                    break;
+                } else {
+
+                    scrollPosition++;
+                }
+            }
+        }
+    }
+
+    @Override
+    public void drawScreen(int mouseX, int mouseY, float partialTicks) {
+
+        RenderHelper.enableGUIStandardItemLighting();
+        GlStateManager.disableLighting();
+        GlStateManager.pushMatrix();
+        GlStateManager.translate(0.0F, 0.0F, 100.0F);
+        this.mc.getTextureManager().bindTexture(RECIPE_BOOK);
+        GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+        this.drawTexturedModalRect(this.guiLeft, this.guiTop, 0, 0, this.xSize, this.ySize);
+        this.searchField.drawTextBox();
+        GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+        this.renderScrollBar(mouseX, mouseY);
+        RenderHelper.disableStandardItemLighting();
