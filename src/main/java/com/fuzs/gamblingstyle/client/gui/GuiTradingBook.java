@@ -249,3 +249,48 @@ public class GuiTradingBook extends Gui implements IGuiExtension {
         this.hoveredButton = null;
         this.filterButton.drawButton(this.mc, mouseX, mouseY, partialTicks);
         for (GuiButtonTradingRecipe tradeButton : this.tradeButtons) {
+
+            tradeButton.drawButton(this.mc, mouseX, mouseY, partialTicks);
+            if (tradeButton.isMouseOver() && tradeButton.visible) {
+
+                this.hoveredButton = tradeButton;
+            }
+        }
+
+        if (this.hoveredButton == null && this.filterButton.isMouseOver()) {
+
+            this.hoveredButton = this.filterButton;
+        }
+    }
+
+    public void renderHoveredTooltip(int mouseX, int mouseY) {
+
+        if (this.mc.currentScreen != null && this.hoveredButton != null) {
+
+            List<String> tooltip = this.hoveredButton.getToolTip(this.mc.currentScreen, mouseX, mouseY);
+            if (tooltip != null && this.mc.player.inventory.getItemStack().isEmpty()) {
+
+                this.mc.currentScreen.drawHoveringText(tooltip, mouseX, mouseY);
+            }
+        }
+    }
+
+    @Override
+    public boolean mouseClicked(int mouseX, int mouseY, int mouseButton) {
+
+        if (this.searchField.mouseClicked(mouseX, mouseY, mouseButton)) {
+
+            return true;
+        }
+
+        if (mouseButton == 0 || mouseButton == 1) {
+
+            if (this.filterButton.mousePressed(this.mc, mouseX, mouseY)) {
+
+                this.filterButton.cycleFilterMode(this.getFavorites() == 0);
+                this.filterButton.playPressSound(this.mc.getSoundHandler());
+                this.invalidate(true);
+
+                return true;
+            }
+        }
