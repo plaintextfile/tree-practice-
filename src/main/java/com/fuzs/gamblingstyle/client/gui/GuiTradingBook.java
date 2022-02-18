@@ -294,3 +294,52 @@ public class GuiTradingBook extends Gui implements IGuiExtension {
                 return true;
             }
         }
+
+        return false;
+    }
+
+    public int mouseClickedTradeButtons(int mouseX, int mouseY, int mouseButton) {
+
+        if (mouseButton == 0 || mouseButton == 1) {
+
+            for (GuiButtonTradingRecipe tradeButton : this.tradeButtons) {
+
+                if (tradeButton.mousePressedOnFavorite(mouseX, mouseY)) {
+
+                    this.tradingRecipeList.get(tradeButton.getRecipeId()).toggleFavorite();
+                    if (this.getFavorites() == 0 && this.getCurrentFilterMode() == ITradingInfo.FilterMode.FAVORITES) {
+
+                        this.filterButton.cycleFilterMode(false);
+                        this.invalidate(true);
+                    } else {
+
+                        this.invalidate(false);
+                    }
+
+                    return -1;
+                } else if (tradeButton.mousePressed(this.mc, mouseX, mouseY)) {
+
+                    this.clearSearch = true;
+                    this.clickedButton = tradeButton;
+                    tradeButton.playPressSound(this.mc.getSoundHandler());
+
+                    return tradeButton.getRecipeId();
+                }
+            }
+        }
+
+        return -1;
+    }
+
+    @Override
+    public void mouseReleased(int mouseX, int mouseY, int state) {
+
+        if (this.clickedButton != null && state == 0) {
+
+            this.clickedButton.mouseReleased(mouseX, mouseY);
+            this.clickedButton = null;
+        }
+    }
+
+    @Override
+    public void handleMouseInput() {
