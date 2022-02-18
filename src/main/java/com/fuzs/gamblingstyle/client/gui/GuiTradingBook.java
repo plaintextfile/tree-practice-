@@ -343,3 +343,45 @@ public class GuiTradingBook extends Gui implements IGuiExtension {
 
     @Override
     public void handleMouseInput() {
+
+        int scrollAmount = Mouse.getEventDWheel();
+        if (scrollAmount != 0 && this.tradingRecipeList != null) {
+
+            int recipes = this.tradingRecipeList.getActiveRecipeAmount();
+            if (recipes > MAX_BUTTONS) {
+
+                if (scrollAmount > 0) {
+
+                    scrollAmount = 1;
+                }
+
+                if (scrollAmount < 0) {
+
+                    scrollAmount = -1;
+                }
+
+                this.currentScroll = (float) ((double) this.currentScroll - (double) scrollAmount / (double) recipes);
+                this.currentScroll = MathHelper.clamp(this.currentScroll, 0.0F, 1.0F);
+                this.updateScrollPosition();
+            }
+        }
+    }
+
+    public boolean hasRecipeContents(int id) {
+
+        if (this.tradingRecipeList != null && this.tradingRecipeList.size() > id) {
+
+            return this.tradingRecipeList.get(id).hasRecipeContents();
+        }
+
+        return false;
+    }
+
+    @Override
+    public boolean hasClickedOutside(int mouseX, int mouseY, int guiLeft, int guiTop, int xSize, int ySize) {
+
+        boolean flag = mouseX < guiLeft || mouseY < guiTop || mouseX >= guiLeft + xSize || mouseY >= guiTop + ySize;
+        boolean flag1 = guiLeft - this.xSize < mouseX && mouseX < guiLeft && guiTop < mouseY && mouseY < guiTop + ySize;
+
+        return flag && !flag1;
+    }
