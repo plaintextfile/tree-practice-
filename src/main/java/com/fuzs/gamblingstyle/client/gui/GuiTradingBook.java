@@ -474,3 +474,38 @@ public class GuiTradingBook extends Gui implements IGuiExtension {
             activeTradeIndices = IntStream.range(0, this.tradingRecipeList.size())
                     .map(recipeIndex -> this.tradingRecipeList.get(recipeIndex).isVisible() ? recipeIndex : -1)
                     .filter(recipeIndex -> recipeIndex >= 0)
+                    .toArray();
+        } else {
+
+            activeTradeIndices = IntStream.range(0, this.tradingRecipeList.size())
+                    .toArray();
+        }
+
+        return activeTradeIndices;
+    }
+
+    public ITradingInfo.FilterMode getCurrentFilterMode() {
+
+        return this.filterButton.getFilterMode();
+    }
+
+    public byte[] getFavoriteTrades() {
+
+        byte[] favorites = new byte[this.getFavorites()];
+        for (int i = 0, j = 0; i < favorites.length; j++) {
+
+            if (this.tradingRecipeList.get(j).isFavorite()) {
+
+                favorites[i++] = (byte) j;
+            }
+        }
+
+        return favorites;
+    }
+
+    private int getFavorites() {
+
+        return (int) this.tradingRecipeList.stream().filter(TradingRecipe::isFavorite).count();
+    }
+
+}
