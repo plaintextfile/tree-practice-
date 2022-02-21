@@ -385,3 +385,48 @@ public class GuiTradingBook extends Gui implements IGuiExtension {
 
         return flag && !flag1;
     }
+
+    @Override
+    public boolean keyTyped(char typedChar, int keyCode) {
+
+        if (this.isKeyValid(keyCode)) {
+
+            return false;
+        }
+
+        if (this.clearSearch) {
+
+            this.searchField.setText("");
+            this.clearSearch = false;
+        }
+
+        if (this.searchField.textboxKeyTyped(typedChar, keyCode)) {
+
+            String searchQuery = this.searchField.getText();
+            if (!searchQuery.equals(this.lastSearch) && this.tradingRecipeList != null) {
+
+                this.lastSearch = searchQuery;
+                this.invalidate(true);
+            }
+
+            return true;
+        }
+
+        return false;
+    }
+
+    private void invalidate(boolean resetScroll) {
+
+        this.tradingRecipeList.search(this.mc, this.lastSearch, this.getCurrentFilterMode());
+        if (resetScroll) {
+
+            this.currentScroll = 0.0F;
+            this.updateScrollPosition();
+        }
+
+        this.requiresRefresh = true;
+    }
+
+    private boolean isKeyValid(int keyCode) {
+
+        if (this.mc.player.inventory.getItemStack().isEmpty() && this.hoveredSlot > 0) {
