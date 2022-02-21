@@ -430,3 +430,47 @@ public class GuiTradingBook extends Gui implements IGuiExtension {
     private boolean isKeyValid(int keyCode) {
 
         if (this.mc.player.inventory.getItemStack().isEmpty() && this.hoveredSlot > 0) {
+
+            GameSettings settings = this.mc.gameSettings;
+            for (int i = 0; i < 9; ++i) {
+
+                if (settings.keyBindsHotbar[i].isActiveAndMatches(keyCode)) {
+
+                    return true;
+                }
+            }
+
+            if (this.hoveredSlot > 1) {
+
+                return settings.keyBindDrop.isActiveAndMatches(keyCode);
+            }
+        }
+
+        return false;
+    }
+
+    private void updateScrollPosition() {
+
+        if (this.tradingRecipeList != null) {
+
+            int activeRecipes = this.tradingRecipeList.getActiveRecipeAmount();
+            int scrollAmount = (int) ((double) (this.currentScroll * (float) Math.max(activeRecipes - MAX_BUTTONS, 0)) + 0.5);
+            scrollAmount = Math.max(0, scrollAmount);
+
+            int[] activeTradeIndices = this.getActiveTradeIndices(activeRecipes);
+            if (scrollAmount < activeTradeIndices.length && this.scrollPosition != activeTradeIndices[scrollAmount]) {
+
+                this.scrollPosition = activeTradeIndices[scrollAmount];
+                this.requiresRefresh = true;
+            }
+        }
+    }
+
+    private int[] getActiveTradeIndices(int activeRecipes) {
+
+        int[] activeTradeIndices;
+        if (activeRecipes < this.tradingRecipeList.size()) {
+
+            activeTradeIndices = IntStream.range(0, this.tradingRecipeList.size())
+                    .map(recipeIndex -> this.tradingRecipeList.get(recipeIndex).isVisible() ? recipeIndex : -1)
+                    .filter(recipeIndex -> recipeIndex >= 0)
