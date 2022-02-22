@@ -48,3 +48,44 @@ public class GuiVillager extends GuiContainer {
 
         super(new ContainerVillager(playerInventory, merchant, traderEntity.world));
         this.merchant = merchant;
+        this.traderEntity = traderEntity;
+        this.windowTitle = merchant.getDisplayName();
+        this.currentRecipeIndex = currentRecipeIndex;
+        this.tradingBookGui = new GuiTradingBook(filterMode);
+        this.ghostTrade = new GhostTrade();
+        this.favoriteTrades = favoriteTrades;
+    }
+
+    @Override
+    public void initGui() {
+
+        super.initGui();
+        // trading book might be open or not
+        this.guiLeft = (this.width - this.xSize) / 2 + 57;
+        this.tradingBookGui.initGui(this.mc, this.width, this.height);
+        // not that this should every change, but it's updated in the super method
+        this.ghostTrade.initGui(this.mc);
+    }
+
+    @Override
+    public void onGuiClosed() {
+
+        this.tradingBookGui.onGuiClosed();
+        if (this.merchant.getCustomer() != null && this.merchant.getRecipes(this.merchant.getCustomer()) != null) {
+
+            NetworkHandler.get().sendToServer(new CSyncTradingInfoMessage(this.traderEntity.getEntityId(), this.currentRecipeIndex, this.tradingBookGui.getCurrentFilterMode(), this.tradingBookGui.getFavoriteTrades()));
+        }
+
+        super.onGuiClosed();
+    }
+
+    @Override
+    protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
+
+        String windowTitle = this.windowTitle.getUnformattedText();
+        this.fontRenderer.drawString(windowTitle, this.xSize / 2 - this.fontRenderer.getStringWidth(windowTitle) / 2 + 23, 6, 4210752);
+        this.fontRenderer.drawString(new TextComponentTranslation("container.inventory").getUnformattedText(), 62, this.ySize - 96 + 2, 4210752);
+    }
+
+    @Override
+    public void updateScreen() {
