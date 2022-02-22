@@ -89,3 +89,53 @@ public class GuiVillager extends GuiContainer {
 
     @Override
     public void updateScreen() {
+
+        super.updateScreen();
+        MerchantRecipeList merchantRecipes = this.merchant.getRecipes(this.mc.player);
+        if (merchantRecipes != null) {
+
+            this.tradingBookGui.updateScreen(merchantRecipes, (ContainerVillager) this.inventorySlots);
+        }
+
+        Slot hoveredSlot = this.getSlotUnderMouse();
+        this.tradingBookGui.hoveredSlot = hoveredSlot != null ? hoveredSlot.getHasStack() ? 2 : 1 : 0;
+        if (((ContainerVillager) this.inventorySlots).areSlotsFilled()) {
+
+            this.ghostTrade.clear();
+        }
+    }
+
+    @Override
+    protected boolean hasClickedOutside(int mouseX, int mouseY, int guiLeft, int guiTop) {
+
+        boolean flag = mouseX < guiLeft || mouseY < guiTop || mouseX >= guiLeft + this.xSize || mouseY >= guiTop + this.ySize;
+
+        return this.tradingBookGui.hasClickedOutside(mouseX, mouseY, this.guiLeft, this.guiTop, this.xSize, this.ySize) && flag;
+    }
+
+    @Override
+    protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
+
+        GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+        this.mc.getTextureManager().bindTexture(MERCHANT_GUI_TEXTURE);
+        this.drawTexturedModalRect(this.guiLeft, this.guiTop, 0, 0, this.xSize, this.ySize);
+        MerchantRecipeList merchantrecipelist = this.merchant.getRecipes(this.mc.player);
+        if (merchantrecipelist != null) {
+
+            int selectedRecipe = this.currentRecipeIndex;
+            MerchantRecipe merchantrecipe = merchantrecipelist.get(selectedRecipe);
+            if (merchantrecipe.isRecipeDisabled()) {
+
+                this.mc.getTextureManager().bindTexture(MERCHANT_GUI_TEXTURE);
+                GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+                GlStateManager.disableLighting();
+                this.drawTexturedModalRect(this.guiLeft + 97, this.guiTop + 32, 212, 0, 28, 21);
+            }
+        }
+
+        GuiInventory.drawEntityOnScreen(this.guiLeft + 33, this.guiTop + 75, 30, this.guiLeft + 33 - mouseX,
+                this.guiTop + 75 - 50 - mouseY, this.traderEntity);
+    }
+
+    @Override
+    protected void mouseClicked(int mouseX, int mouseY, int mouseButton) throws IOException {
