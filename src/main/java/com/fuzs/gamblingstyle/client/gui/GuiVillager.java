@@ -139,3 +139,49 @@ public class GuiVillager extends GuiContainer {
 
     @Override
     protected void mouseClicked(int mouseX, int mouseY, int mouseButton) throws IOException {
+
+        if (!this.tradingBookGui.mouseClicked(mouseX, mouseY, mouseButton)) {
+
+            int recipeIndex = this.tradingBookGui.mouseClickedTradeButtons(mouseX, mouseY, mouseButton);
+            if (recipeIndex != -1) {
+
+                this.updateSelectedRecipe(recipeIndex, mouseButton == 1);
+            } else {
+
+                super.mouseClicked(mouseX, mouseY, mouseButton);
+            }
+        }
+    }
+
+    private void updateSelectedRecipe(int recipeIndex, boolean skipMove) {
+
+        MerchantRecipeList merchantrecipelist = this.merchant.getRecipes(this.mc.player);
+        if (merchantrecipelist != null) {
+
+            MerchantRecipe recipe = merchantrecipelist.get(recipeIndex);
+            boolean isNotSelected = this.currentRecipeIndex != recipeIndex;
+            boolean hasIngredients = this.tradingBookGui.hasRecipeContents(recipeIndex);
+            boolean isDisabled = recipe.isRecipeDisabled();
+            if (isNotSelected) {
+
+                this.currentRecipeIndex = recipeIndex;
+                this.sendSelectedRecipe(!hasIngredients || isDisabled);
+            }
+
+            if (hasIngredients) {
+
+                this.ghostTrade.clear();
+                if (!isDisabled) {
+
+                    this.moveRecipeIngredients(isNotSelected, GuiScreen.isShiftKeyDown(), skipMove);
+                }
+            } else {
+
+                this.ghostTrade.setRecipe(recipe.getItemToBuy(), recipe.getSecondItemToBuy(), recipe.getItemToSell());
+                if (((ContainerVillager) this.inventorySlots).areSlotsFilled()) {
+
+                    this.sendSelectedRecipe(true);
+                }
+            }
+        }
+    }
