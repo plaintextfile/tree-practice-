@@ -185,3 +185,42 @@ public class GuiVillager extends GuiContainer {
             }
         }
     }
+
+    private void sendSelectedRecipe(boolean clearSlots) {
+
+        ((ContainerVillager) this.inventorySlots).setCurrentRecipeIndex(this.currentRecipeIndex);
+        if (clearSlots) {
+
+            ((ContainerVillager) this.inventorySlots).clearTradingSlots();
+        }
+
+        this.tradingBookGui.setSelectedTradingRecipe(this.currentRecipeIndex);
+        NetworkHandler.get().sendToServer(new CSelectedRecipeMessage(this.currentRecipeIndex, clearSlots));
+    }
+
+    private void moveRecipeIngredients(boolean clear, boolean quickMove, boolean skipMove) {
+
+        ((ContainerVillager) this.inventorySlots).handleClickedButtonItems(this.currentRecipeIndex, clear, quickMove, skipMove);
+        NetworkHandler.get().sendToServer(new CMoveIngredientsMessage(this.currentRecipeIndex, clear, quickMove, skipMove));
+    }
+
+    @SuppressWarnings("ConstantConditions")
+    @Override
+    protected void handleMouseClick(Slot slotIn, int slotId, int mouseButton, ClickType type) {
+
+        super.handleMouseClick(slotIn, slotId, mouseButton, type);
+        this.tradingBookGui.countTradeMaterials((ContainerVillager) this.inventorySlots);
+        if (slotIn != null && slotId <= 2) {
+
+            MerchantRecipeList merchantrecipelist = this.merchant.getRecipes(this.mc.player);
+            if (merchantrecipelist != null && merchantrecipelist.size() > this.currentRecipeIndex) {
+
+                if (!merchantrecipelist.get(this.currentRecipeIndex).hasSecondItemToBuy() && slotId == 1) {
+
+                    return;
+                }
+
+                this.ghostTrade.clear();
+            }
+        }
+    }
