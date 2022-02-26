@@ -224,3 +224,52 @@ public class GuiVillager extends GuiContainer {
             }
         }
     }
+
+    @Override
+    protected void mouseReleased(int mouseX, int mouseY, int state) {
+
+        this.tradingBookGui.mouseReleased(mouseX, mouseY, state);
+        super.mouseReleased(mouseX, mouseY, state);
+    }
+
+    @Override
+    public void handleMouseInput() throws IOException {
+
+        this.tradingBookGui.handleMouseInput();
+        super.handleMouseInput();
+    }
+
+    @Override
+    public void drawScreen(int mouseX, int mouseY, float partialTicks) {
+
+        this.drawDefaultBackground();
+        this.tradingBookGui.drawScreen(mouseX, mouseY, partialTicks);
+        super.drawScreen(mouseX, mouseY, partialTicks);
+        this.ghostTrade.render(this.guiLeft, this.guiTop);
+        MerchantRecipeList merchantrecipelist = this.merchant.getRecipes(this.mc.player);
+        if (merchantrecipelist != null) {
+
+            MerchantRecipe merchantrecipe = merchantrecipelist.get(this.currentRecipeIndex);
+            GlStateManager.pushMatrix();
+            RenderHelper.enableGUIStandardItemLighting();
+            GlStateManager.disableLighting();
+            GlStateManager.enableRescaleNormal();
+            GlStateManager.enableColorMaterial();
+            if (merchantrecipe.isRecipeDisabled() && this.isPointInRegion(97, 32, 28, 21, mouseX, mouseY)) {
+
+                this.drawHoveringText(new TextComponentTranslation("merchant.deprecated").getUnformattedText(), mouseX, mouseY);
+            }
+
+            GlStateManager.popMatrix();
+            GlStateManager.enableLighting();
+            GlStateManager.enableDepth();
+            RenderHelper.enableStandardItemLighting();
+        }
+
+        this.renderHoveredToolTip(mouseX, mouseY);
+        this.tradingBookGui.renderHoveredTooltip(mouseX, mouseY);
+        this.ghostTrade.renderHoveredTooltip(mouseX, mouseY, this.guiLeft, this.guiTop);
+    }
+
+    @Override
+    protected void keyTyped(char typedChar, int keyCode) throws IOException {
