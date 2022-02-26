@@ -273,3 +273,28 @@ public class GuiVillager extends GuiContainer {
 
     @Override
     protected void keyTyped(char typedChar, int keyCode) throws IOException {
+
+        if (!this.tradingBookGui.keyTyped(typedChar, keyCode)) {
+
+            super.keyTyped(typedChar, keyCode);
+        }
+    }
+
+    public void setMerchantRecipes(@Nullable MerchantRecipeList merchantRecipes) {
+
+        this.merchant.setRecipes(merchantRecipes);
+        if (merchantRecipes != null) {
+
+            // ToroQuest mod apparently can remove villager trades, so our last recipe index might no longer be within bounds
+            if (this.currentRecipeIndex >= merchantRecipes.size()) {
+
+                this.currentRecipeIndex = 0;
+            }
+
+            // also handles setting last recipe index on trading book
+            this.sendSelectedRecipe(false);
+            this.tradingBookGui.setRecipes(merchantRecipes, (ContainerVillager) this.inventorySlots, this.favoriteTrades);
+        }
+    }
+
+}
