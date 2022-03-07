@@ -119,3 +119,16 @@ public class TradingRecipe {
     }
 
     public List<String> getSearchTooltip(EntityPlayer player, ITooltipFlag tooltipFlag) {
+
+        List<String> list = Lists.newArrayList();
+        list.addAll(this.getItemToBuy().getTooltip(player, tooltipFlag));
+        list.addAll(this.getItemToSell().getTooltip(player, tooltipFlag));
+        if (this.hasSecondItemToBuy()) {
+
+            list.addAll(this.getSecondItemToBuy().getTooltip(player, tooltipFlag));
+        }
+
+        return list;
+    }
+
+}
