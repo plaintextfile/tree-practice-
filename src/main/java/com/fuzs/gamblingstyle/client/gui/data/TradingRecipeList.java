@@ -8,4 +8,5 @@ import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.village.MerchantRecipe;
 import net.minecraft.village.MerchantRecipeList;
-import net.minecraft
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftfo
