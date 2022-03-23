@@ -7,4 +7,5 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.village.MerchantRecipe;
-import net.minecraft.vi
+import net.minecraft.village.MerchantRecipeList;
+import net.minecraft
