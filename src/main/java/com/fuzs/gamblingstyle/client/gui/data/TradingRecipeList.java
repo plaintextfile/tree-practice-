@@ -9,4 +9,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.village.MerchantRecipe;
 import net.minecraft.village.MerchantRecipeList;
 import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftfo
+import net.minecraftforge.fml.relauncher.SideOnly;
+
+import jav
