@@ -14,4 +14,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-import java.util.stream.Collect
+import java.util.stream.Collectors;
+
+@SideOnly(Side.CLIENT)
