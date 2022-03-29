@@ -17,3 +17,4 @@ import java.util.Locale;
 import java.util.stream.Collectors;
 
 @SideOnly(Side.CLIENT)
+public class TradingRecipeList extends
