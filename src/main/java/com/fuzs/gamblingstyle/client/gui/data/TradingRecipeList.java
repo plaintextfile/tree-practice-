@@ -21,4 +21,5 @@ public class TradingRecipeList extends ArrayList<TradingRecipe> {
 
     public TradingRecipeList(MerchantRecipeList merchantRecipes) {
 
-        this.co
+        this.convertMerchantRecipes(merchantRecipes);
+    }
