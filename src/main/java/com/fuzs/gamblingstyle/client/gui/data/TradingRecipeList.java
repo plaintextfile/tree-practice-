@@ -19,4 +19,6 @@ import java.util.stream.Collectors;
 @SideOnly(Side.CLIENT)
 public class TradingRecipeList extends ArrayList<TradingRecipe> {
 
-    public TradingRecipeList(MerchantRecipeLis
+    public TradingRecipeList(MerchantRecipeList merchantRecipes) {
+
+        this.co
