@@ -23,3 +23,5 @@ public class TradingRecipeList extends ArrayList<TradingRecipe> {
 
         this.convertMerchantRecipes(merchantRecipes);
     }
+
+    private void convertMerchantR
