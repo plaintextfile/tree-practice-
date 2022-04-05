@@ -26,4 +26,6 @@ public class TradingRecipeList extends ArrayList<TradingRecipe> {
 
     private void convertMerchantRecipes(MerchantRecipeList merchantRecipes) {
 
-        for (MerchantRecipe recipe : mer
+        for (MerchantRecipe recipe : merchantRecipes) {
+
+            if (this.is
