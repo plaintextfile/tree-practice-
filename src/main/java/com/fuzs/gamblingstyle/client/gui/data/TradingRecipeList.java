@@ -28,4 +28,6 @@ public class TradingRecipeList extends ArrayList<TradingRecipe> {
 
         for (MerchantRecipe recipe : merchantRecipes) {
 
-            if (this.is
+            if (this.isValidRecipe(recipe)) {
+
+                thi
