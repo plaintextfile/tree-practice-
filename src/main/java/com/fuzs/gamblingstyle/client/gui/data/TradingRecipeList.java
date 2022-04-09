@@ -35,4 +35,6 @@ public class TradingRecipeList extends ArrayList<TradingRecipe> {
         }
     }
 
-    private boolean isValidR
+    private boolean isValidRecipe(MerchantRecipe recipe) {
+
+        return !r
