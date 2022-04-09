@@ -30,4 +30,4 @@ public class TradingRecipeList extends ArrayList<TradingRecipe> {
 
             if (this.isValidRecipe(recipe)) {
 
-                this.add(new TradingRecipe(recipe.getItemToBuy()
+                this.add(new TradingRecipe(recipe.getItemToBuy(), recipe.getSecondItemToBuy(), recipe.getItemToSell())
