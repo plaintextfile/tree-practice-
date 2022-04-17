@@ -37,4 +37,7 @@ public class TradingRecipeList extends ArrayList<TradingRecipe> {
 
     private boolean isValidRecipe(MerchantRecipe recipe) {
 
-        return !recipe.getItemToBuy().isEmpty() && !recipe.
+        return !recipe.getItemToBuy().isEmpty() && !recipe.getItemToSell().isEmpty();
+    }
+
+    public int 
