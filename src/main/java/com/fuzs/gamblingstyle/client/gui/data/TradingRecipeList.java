@@ -42,4 +42,7 @@ public class TradingRecipeList extends ArrayList<TradingRecipe> {
 
     public int getActiveRecipeAmount() {
 
-        return (int) this.stream().filter(TradingRecipe::isVisible).cou
+        return (int) this.stream().filter(TradingRecipe::isVisible).count();
+    }
+
+    public void search(Minecraft mc
