@@ -40,4 +40,6 @@ public class TradingRecipeList extends ArrayList<TradingRecipe> {
         return !recipe.getItemToBuy().isEmpty() && !recipe.getItemToSell().isEmpty();
     }
 
-    public int 
+    public int getActiveRecipeAmount() {
+
+        return (int) this
