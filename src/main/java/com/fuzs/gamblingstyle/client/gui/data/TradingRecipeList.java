@@ -42,4 +42,4 @@ public class TradingRecipeList extends ArrayList<TradingRecipe> {
 
     public int getActiveRecipeAmount() {
 
-        return (int) this
+        return (int) this.stream().filter(TradingRecipe::isVisible).cou
