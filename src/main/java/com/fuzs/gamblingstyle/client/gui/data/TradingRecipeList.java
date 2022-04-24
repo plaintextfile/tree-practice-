@@ -45,4 +45,6 @@ public class TradingRecipeList extends ArrayList<TradingRecipe> {
         return (int) this.stream().filter(TradingRecipe::isVisible).count();
     }
 
-    public void search(Minecraft mc, String query, ITradingInfo.FilterMode filterMode
+    public void search(Minecraft mc, String query, ITradingInfo.FilterMode filterMode) {
+
+        ITooltipFlag tooltipFlag = mc
