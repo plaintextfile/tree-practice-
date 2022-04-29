@@ -47,4 +47,4 @@ public class TradingRecipeList extends ArrayList<TradingRecipe> {
 
     public void search(Minecraft mc, String query, ITradingInfo.FilterMode filterMode) {
 
-        ITooltipFlag tooltipFlag = mc
+        ITooltipFlag tooltipFlag = mc.gameSettings.advancedItemTooltips ? ITooltipFlag.To
