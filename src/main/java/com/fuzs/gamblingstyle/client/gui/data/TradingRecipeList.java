@@ -49,4 +49,6 @@ public class TradingRecipeList extends ArrayList<TradingRecipe> {
 
         ITooltipFlag tooltipFlag = mc.gameSettings.advancedItemTooltips ? ITooltipFlag.TooltipFlags.ADVANCED : ITooltipFlag.TooltipFlags.NORMAL;
         String trimmed = query.trim().toLowerCase(Locale.ROOT);
-        for (TradingRecipe recipe : this
+        for (TradingRecipe recipe : this) {
+
+            boolean visible = recip
