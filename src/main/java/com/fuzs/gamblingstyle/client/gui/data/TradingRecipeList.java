@@ -48,4 +48,5 @@ public class TradingRecipeList extends ArrayList<TradingRecipe> {
     public void search(Minecraft mc, String query, ITradingInfo.FilterMode filterMode) {
 
         ITooltipFlag tooltipFlag = mc.gameSettings.advancedItemTooltips ? ITooltipFlag.TooltipFlags.ADVANCED : ITooltipFlag.TooltipFlags.NORMAL;
-        String trimmed = query.trim().toLowerCase(Locale.
+        String trimmed = query.trim().toLowerCase(Locale.ROOT);
+        for (TradingRecipe recipe : this
