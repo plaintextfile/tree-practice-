@@ -51,4 +51,5 @@ public class TradingRecipeList extends ArrayList<TradingRecipe> {
         String trimmed = query.trim().toLowerCase(Locale.ROOT);
         for (TradingRecipe recipe : this) {
 
-            boolean visible = recip
+            boolean visible = recipe.shouldBeIncluded(filterMode);
+     
