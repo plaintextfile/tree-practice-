@@ -52,4 +52,4 @@ public class TradingRecipeList extends ArrayList<TradingRecipe> {
         for (TradingRecipe recipe : this) {
 
             boolean visible = recipe.shouldBeIncluded(filterMode);
-     
+            if (!trimmed.isEmpty() && visib
