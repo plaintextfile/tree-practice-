@@ -54,4 +54,5 @@ public class TradingRecipeList extends ArrayList<TradingRecipe> {
             boolean visible = recipe.shouldBeIncluded(filterMode);
             if (!trimmed.isEmpty() && visible) {
 
-                visible = recipe.getSearchTool
+                visible = recipe.getSearchTooltip(mc.player, tooltipFlag).stream()
+   
