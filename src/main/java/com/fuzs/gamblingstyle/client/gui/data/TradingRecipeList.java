@@ -55,4 +55,4 @@ public class TradingRecipeList extends ArrayList<TradingRecipe> {
             if (!trimmed.isEmpty() && visible) {
 
                 visible = recipe.getSearchTooltip(mc.player, tooltipFlag).stream()
-   
+                        .map(tooltipLine -> tooltipLine.toLowerCase
