@@ -56,4 +56,7 @@ public class TradingRecipeList extends ArrayList<TradingRecipe> {
 
                 visible = recipe.getSearchTooltip(mc.player, tooltipFlag).stream()
                         .map(tooltipLine -> tooltipLine.toLowerCase(Locale.ROOT))
-                        .anyMatch(tooltipLine -> tooltipLine.contains(trimmed)
+                        .anyMatch(tooltipLine -> tooltipLine.contains(trimmed));
+            }
+
+            r
