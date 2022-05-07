@@ -59,4 +59,9 @@ public class TradingRecipeList extends ArrayList<TradingRecipe> {
                         .anyMatch(tooltipLine -> tooltipLine.contains(trimmed));
             }
 
-            r
+            recipe.setVisible(visible);
+        }
+
+    }
+
+    public
