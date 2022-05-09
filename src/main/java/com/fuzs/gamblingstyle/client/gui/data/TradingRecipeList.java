@@ -64,4 +64,6 @@ public class TradingRecipeList extends ArrayList<TradingRecipe> {
 
     }
 
-    public void countTradeMaterials(ContainerVillager co
+    public void countTradeMaterials(ContainerVillager container) {
+
+        for (TradingRecipe r
