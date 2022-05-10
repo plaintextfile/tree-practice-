@@ -68,4 +68,5 @@ public class TradingRecipeList extends ArrayList<TradingRecipe> {
 
         for (TradingRecipe recipe : this) {
 
-            recipe.itemIngr
+            recipe.itemIngredients = 0;
+            recipe.secondItemIngredie
