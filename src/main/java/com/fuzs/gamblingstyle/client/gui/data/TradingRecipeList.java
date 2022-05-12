@@ -72,4 +72,4 @@ public class TradingRecipeList extends ArrayList<TradingRecipe> {
             recipe.secondItemIngredients = 0;
         }
 
-        List<ItemStack> coll
+        List<ItemStack> collect = container.inventorySlots.strea
