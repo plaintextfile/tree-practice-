@@ -72,4 +72,4 @@ public class TradingRecipeList extends ArrayList<TradingRecipe> {
             recipe.secondItemIngredients = 0;
         }
 
-        List<ItemStack> collect = container.inventorySlots.strea
+        List<ItemStack> collect = container.inventorySlots.stream().map(Slot::getStack).collect(Collectors.toList()
