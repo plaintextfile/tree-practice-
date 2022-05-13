@@ -74,3 +74,5 @@ public class TradingRecipeList extends ArrayList<TradingRecipe> {
 
         List<ItemStack> collect = container.inventorySlots.stream().map(Slot::getStack).collect(Collectors.toList());
         for (int i = 0; i < collect.size(); i++) {
+
+            ItemStack itemstack = collect.get(
