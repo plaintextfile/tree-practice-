@@ -78,4 +78,6 @@ public class TradingRecipeList extends ArrayList<TradingRecipe> {
             ItemStack itemstack = collect.get(i);
             if (i != 2) { //don't count output slot
 
-                for (Tradi
+                for (TradingRecipe recipe : this) {
+
+                  
