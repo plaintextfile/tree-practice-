@@ -80,4 +80,4 @@ public class TradingRecipeList extends ArrayList<TradingRecipe> {
 
                 for (TradingRecipe recipe : this) {
 
-                  
+                    if (ItemStack.areItemsEqual(itemst
