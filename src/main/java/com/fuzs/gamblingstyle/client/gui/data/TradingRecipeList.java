@@ -82,4 +82,4 @@ public class TradingRecipeList extends ArrayList<TradingRecipe> {
 
                     if (ItemStack.areItemsEqual(itemstack, recipe.getItemToBuy())) {
 
-            
+                        recipe.itemIngredients += itemstack.ge
