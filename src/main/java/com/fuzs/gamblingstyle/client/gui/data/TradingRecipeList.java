@@ -85,4 +85,4 @@ public class TradingRecipeList extends ArrayList<TradingRecipe> {
                         recipe.itemIngredients += itemstack.getCount();
                     }
 
-                    if (re
+                    if (recipe.hasSecondItemToBuy() && ItemStack.areItems
