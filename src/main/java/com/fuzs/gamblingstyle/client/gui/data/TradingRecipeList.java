@@ -88,3 +88,6 @@ public class TradingRecipeList extends ArrayList<TradingRecipe> {
                     if (recipe.hasSecondItemToBuy() && ItemStack.areItemsEqual(itemstack, recipe.getSecondItemToBuy())) {
 
                         recipe.secondItemIngredients += itemstack.getCount();
+                    }
+                }
+         
