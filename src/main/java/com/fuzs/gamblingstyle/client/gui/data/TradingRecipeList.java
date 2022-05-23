@@ -90,4 +90,8 @@ public class TradingRecipeList extends ArrayList<TradingRecipe> {
                         recipe.secondItemIngredients += itemstack.getCount();
                     }
                 }
-         
+            }
+        }
+    }
+
+}
