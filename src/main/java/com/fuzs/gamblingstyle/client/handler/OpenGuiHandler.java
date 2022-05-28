@@ -6,4 +6,6 @@ import net.minecraft.client.gui.GuiMerchant;
 import net.minecraftforge.client.event.GuiOpenEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-publi
+public class OpenGuiHandler {
+
+    @SuppressWarnin
