@@ -8,4 +8,6 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class OpenGuiHandler {
 
-    @SuppressWarnin
+    @SuppressWarnings("unused")
+    @SubscribeEvent
+   
