@@ -12,4 +12,4 @@ public class OpenGuiHandler {
     @SubscribeEvent
     public void onGuiOpen(final GuiOpenEvent evt) {
 
-    
+        // vanilla gui will be opened after ours
