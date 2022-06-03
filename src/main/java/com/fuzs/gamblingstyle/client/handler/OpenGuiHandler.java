@@ -13,4 +13,6 @@ public class OpenGuiHandler {
     public void onGuiOpen(final GuiOpenEvent evt) {
 
         // vanilla gui will be opened after ours
-        if (evt.getGui() instanceof GuiMerchant && Minecraft.getMinecraft().curre
+        if (evt.getGui() instanceof GuiMerchant && Minecraft.getMinecraft().currentScreen instanceof GuiVillager) {
+
+        
