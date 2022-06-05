@@ -17,3 +17,6 @@ public class OpenGuiHandler {
 
             evt.setCanceled(true);
         }
+    }
+
+}
