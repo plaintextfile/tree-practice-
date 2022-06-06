@@ -36,3 +36,38 @@ public class OpenContainerHandler {
             if (merchant instanceof EntityLivingBase && evt.getEntityPlayer() instanceof EntityPlayerMP) {
 
                 EntityPlayerMP player = (EntityPlayerMP) evt.getEntityPlayer();
+                MerchantRecipeList merchantrecipelist = merchant.getRecipes(evt.getEntityPlayer());
+                if (merchantrecipelist != null && !merchantrecipelist.isEmpty() && merchant.getCustomer() == player) {
+
+                    player.closeContainer();
+                    // is reset on closing container
+                    merchant.setCustomer(player);
+                    this.displayVillagerTradeGui(player, (T) merchant);
+                    this.sendTradingList(player, merchantrecipelist);
+                }
+            }
+        }
+    }
+
+    @Nullable
+    private IMerchant getMerchant(ContainerMerchant container) {
+
+        try {
+
+            return ObfuscationReflectionHelper.getPrivateValue(ContainerMerchant.class, container, "field_75178_e");
+        } catch (Exception e) {
+
+            GamblingStyle.LOGGER.error("getMerchant() failed", e);
+        }
+
+        return null;
+    }
+
+    private <T extends EntityLivingBase & IMerchant> void displayVillagerTradeGui(EntityPlayerMP player, T merchant) {
+
+        player.getNextWindowId();
+        player.openContainer = new ContainerVillager(player.inventory, merchant, player.world);
+        player.openContainer.windowId = player.currentWindowId;
+        player.openContainer.addListener(player);
+        IInventory iinventory = ((ContainerVillager) player.openContainer).getMerchantInventory();
+        ITextComponent itextcomponent = merchant.getDisplayName();
