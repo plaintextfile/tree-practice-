@@ -71,3 +71,18 @@ public class OpenContainerHandler {
         player.openContainer.addListener(player);
         IInventory iinventory = ((ContainerVillager) player.openContainer).getMerchantInventory();
         ITextComponent itextcomponent = merchant.getDisplayName();
+
+        ITradingInfo tradingInfo = CapabilityController.getCapability(merchant, CapabilityController.TRADING_INFO_CAPABILITY);
+        NetworkHandler.get().sendTo(new SOpenWindowMessage(player.currentWindowId, itextcomponent, iinventory.getSizeInventory(),
+                merchant.getEntityId(), tradingInfo.getLastTradeIndex(), tradingInfo.getFilterMode(), tradingInfo.getFavoriteTrades()), player);
+    }
+
+    private void sendTradingList(EntityPlayerMP player, MerchantRecipeList merchantrecipelist) {
+
+        PacketBuffer packetbuffer = new PacketBuffer(Unpooled.buffer());
+        packetbuffer.writeInt(player.currentWindowId);
+        merchantrecipelist.writeToBuf(packetbuffer);
+        NetworkHandler.get().sendTo(new STradingListMessage(packetbuffer), player);
+    }
+
+}
