@@ -30,3 +30,47 @@ public class ContainerVillager extends ContainerMerchant {
         this.merchant = merchant;
         this.world = worldIn;
         this.player = playerInventory.player;
+        this.merchantInventory = new InventoryMerchant(this.player, merchant);
+        this.addContainerSlots(playerInventory, merchant);
+    }
+
+    private void addContainerSlots(InventoryPlayer playerInventory, IMerchant merchant) {
+
+        this.addSlotToContainer(new Slot(this.merchantInventory, 0, 76, 22));
+        this.addSlotToContainer(new Slot(this.merchantInventory, 1, 76, 48));
+        this.addSlotToContainer(new SlotMerchantResult(this.player, merchant, this.merchantInventory, 2, 134, 35));
+        for (int i = 0; i < 3; ++i) {
+
+            for (int j = 0; j < 9; ++j) {
+
+                this.addSlotToContainer(new Slot(playerInventory, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
+            }
+        }
+
+        for (int k = 0; k < 9; ++k) {
+
+            this.addSlotToContainer(new Slot(playerInventory, k, 8 + k * 18, 142));
+        }
+    }
+
+    @Override
+    public InventoryMerchant getMerchantInventory() {
+
+        return this.merchantInventory;
+    }
+
+    @Override
+    public void onCraftMatrixChanged(IInventory inventoryIn) {
+
+        this.merchantInventory.resetRecipeAndSlots();
+        // moved from super call
+        this.detectAndSendChanges();
+    }
+
+    @Override
+    public void setCurrentRecipeIndex(int currentRecipeIndex) {
+
+        this.merchantInventory.setCurrentRecipeIndex(currentRecipeIndex);
+    }
+
+    @Override
