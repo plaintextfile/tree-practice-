@@ -74,3 +74,41 @@ public class ContainerVillager extends ContainerMerchant {
     }
 
     @Override
+    public boolean canInteractWith(EntityPlayer playerIn) {
+
+        return this.merchant.getCustomer() == playerIn;
+    }
+
+    @Override
+    public ItemStack transferStackInSlot(EntityPlayer playerIn, int index) {
+
+        ItemStack itemstack = ItemStack.EMPTY;
+        Slot indexSlot = this.inventorySlots.get(index);
+        if (indexSlot != null && indexSlot.getHasStack()) {
+
+            ItemStack stackAtIndex = indexSlot.getStack();
+            itemstack = stackAtIndex.copy();
+            if (index == 2) {
+
+                if (!this.mergeItemStack(stackAtIndex, 3, 39, true)) {
+
+                    return ItemStack.EMPTY;
+                }
+
+                indexSlot.onSlotChange(stackAtIndex, itemstack);
+            } else if (index != 0 && index != 1) {
+
+                if (index >= 3 && index < 39) {
+
+                    ItemStack itemToBuy = this.merchantInventory.getStackInSlot(0);
+                    ItemStack secondItemToBuy = this.merchantInventory.getStackInSlot(1);
+                    boolean flag = false;
+                    if (!ItemStack.areItemsEqualIgnoreDurability(secondItemToBuy, stackAtIndex) || !itemToBuy.isEmpty()) {
+
+                        flag = !this.mergeItemStack(stackAtIndex, 0, 1, false);
+                    }
+
+                    if ((!ItemStack.areItemsEqualIgnoreDurability(itemToBuy, stackAtIndex) || !secondItemToBuy.isEmpty())) {
+
+                        flag = !this.mergeItemStack(stackAtIndex, 1, 2, false);
+                    }
