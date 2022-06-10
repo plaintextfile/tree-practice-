@@ -112,3 +112,57 @@ public class ContainerVillager extends ContainerMerchant {
 
                         flag = !this.mergeItemStack(stackAtIndex, 1, 2, false);
                     }
+
+                    if (flag) {
+
+                        return ItemStack.EMPTY;
+                    } else {
+
+                        this.onCraftMatrixChanged(this.merchantInventory);
+                    }
+                }
+            } else if (!this.mergeItemStack(stackAtIndex, 3, 39, false)) {
+
+                return ItemStack.EMPTY;
+            }
+
+            if (stackAtIndex.isEmpty()) {
+
+                indexSlot.putStack(ItemStack.EMPTY);
+            } else {
+
+                indexSlot.onSlotChanged();
+            }
+
+            if (stackAtIndex.getCount() == itemstack.getCount()) {
+
+                return ItemStack.EMPTY;
+            }
+
+            indexSlot.onTake(playerIn, stackAtIndex);
+        }
+
+        return itemstack;
+    }
+
+    public boolean areSlotsFilled() {
+
+        return !this.merchantInventory.getStackInSlot(0).isEmpty() || !this.merchantInventory.getStackInSlot(1).isEmpty();
+    }
+
+    /**
+     * Move trading slot contents to inventory so that a ghost recipe can properly be displayed
+     */
+    public void clearTradingSlots() {
+
+        ItemStack itemToBuy = this.merchantInventory.getStackInSlot(0);
+        ItemStack secondItemToBuy = this.merchantInventory.getStackInSlot(1);
+        if (!itemToBuy.isEmpty()) {
+
+            this.mergeItemStack(itemToBuy, 3, 39, true);
+        }
+
+        if (!secondItemToBuy.isEmpty()) {
+
+            this.mergeItemStack(secondItemToBuy, 3, 39, true);
+        }
