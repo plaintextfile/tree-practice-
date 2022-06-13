@@ -166,3 +166,52 @@ public class ContainerVillager extends ContainerMerchant {
 
             this.mergeItemStack(secondItemToBuy, 3, 39, true);
         }
+
+        this.onCraftMatrixChanged(this.merchantInventory);
+    }
+
+    /**
+     * Are the buy items switched in the trading slots
+     */
+    private boolean getItemsSwitched(ItemStack itemToBuy, ItemStack secondItemToBuy, ItemStack itemToBuyRecipe, ItemStack secondItemToBuyRecipe) {
+
+        boolean itemToBuySwitched = !itemToBuy.isEmpty() && ItemStack.areItemsEqual(itemToBuy, secondItemToBuyRecipe);
+        boolean secondItemToBuySwitched = !secondItemToBuy.isEmpty() && ItemStack.areItemsEqual(secondItemToBuy, itemToBuyRecipe);
+        return (itemToBuySwitched || secondItemToBuySwitched) && !(ItemStack.areItemsEqual(itemToBuy, itemToBuyRecipe) || ItemStack.areItemsEqual(secondItemToBuy, secondItemToBuyRecipe));
+    }
+
+    /**
+     * Handle item moving when a recipe button is clicked
+     *
+     * @param recipeIndex Id of the recipe belonging to the clicked button
+     * @param clear       Force clearing trading slots
+     * @param quickMove   Move as many items as possible
+     * @param skipMove    Move output directly to player inventory
+     */
+    public void handleClickedButtonItems(int recipeIndex, boolean clear, boolean quickMove, boolean skipMove) {
+
+        MerchantRecipeList merchantrecipelist = this.merchant.getRecipes(this.player);
+        if (merchantrecipelist != null && merchantrecipelist.size() > recipeIndex) {
+
+            MerchantRecipe recipe = merchantrecipelist.get(recipeIndex);
+            ItemStack itemToBuy = this.merchantInventory.getStackInSlot(0);
+            ItemStack secondItemToBuy = this.merchantInventory.getStackInSlot(1);
+            ItemStack itemToBuyRecipe = recipe.getItemToBuy();
+            ItemStack secondItemToBuyRecipe = recipe.getSecondItemToBuy();
+            boolean slotsSwitched = this.getItemsSwitched(itemToBuy, secondItemToBuy, itemToBuyRecipe, secondItemToBuyRecipe);
+            if (!itemToBuy.isEmpty() && (clear && !skipMove || !ItemStack.areItemsEqual(itemToBuy, itemToBuyRecipe) && !slotsSwitched || !ItemStack.areItemsEqual(itemToBuy, secondItemToBuyRecipe) && slotsSwitched)) {
+
+                if (!this.mergeItemStack(itemToBuy, 3, 39, true)) {
+
+                    return;
+                }
+
+                this.merchantInventory.setInventorySlotContents(0, itemToBuy);
+            }
+
+            if (!secondItemToBuy.isEmpty() && (clear && !skipMove || !ItemStack.areItemsEqual(secondItemToBuy, secondItemToBuyRecipe) && !slotsSwitched || !ItemStack.areItemsEqual(secondItemToBuy, itemToBuyRecipe) && slotsSwitched)) {
+
+                if (!this.mergeItemStack(secondItemToBuy, 3, 39, true)) {
+
+                    return;
+                }
