@@ -215,3 +215,42 @@ public class ContainerVillager extends ContainerMerchant {
 
                     return;
                 }
+
+                this.merchantInventory.setInventorySlotContents(1, secondItemToBuy);
+            }
+
+            while (true) {
+
+                int itemToBuyCount = slotsSwitched ? secondItemToBuyRecipe.getCount() : itemToBuyRecipe.getCount();
+                int secondItemToBuyCount = slotsSwitched ? itemToBuyRecipe.getCount() : secondItemToBuyRecipe.getCount();
+                if (skipMove) {
+
+                    itemToBuyCount -= this.merchantInventory.getStackInSlot(0).getCount();
+                    secondItemToBuyCount -= this.merchantInventory.getStackInSlot(1).getCount();
+                }
+
+                this.moveAndTrade(quickMove, skipMove, slotsSwitched ? secondItemToBuyRecipe : itemToBuyRecipe, slotsSwitched ? itemToBuyRecipe : secondItemToBuyRecipe, itemToBuyCount, secondItemToBuyCount);
+                ItemStack itemstack5 = this.merchantInventory.getStackInSlot(0);
+                ItemStack itemstack6 = this.merchantInventory.getStackInSlot(1);
+                boolean isTradeAvailable = this.isTradeAvailable(itemToBuyRecipe, secondItemToBuyRecipe, slotsSwitched ? itemstack6 : itemstack5, slotsSwitched ? itemstack5 : itemstack6);
+                if (skipMove && isTradeAvailable) {
+
+                    this.tradeAutomatically(recipe.getItemToSell());
+                }
+
+                if (!quickMove || !skipMove || recipe.isRecipeDisabled() || !isTradeAvailable) {
+
+                    if (quickMove && skipMove) {
+
+                        this.mergeItemStack(itemstack5, 3, 39, true);
+                        this.mergeItemStack(itemstack6, 3, 39, true);
+                    }
+
+                    this.onCraftMatrixChanged(this.merchantInventory);
+                    break;
+                }
+            }
+        }
+    }
+
+    private void moveAndTrade(boolean quickMove, boolean skipMove, ItemStack itemToBuy, ItemStack secondItemToBuy, int itemToBuyCount, int secondItemToBuyCount) {
