@@ -254,3 +254,54 @@ public class ContainerVillager extends ContainerMerchant {
     }
 
     private void moveAndTrade(boolean quickMove, boolean skipMove, ItemStack itemToBuy, ItemStack secondItemToBuy, int itemToBuyCount, int secondItemToBuyCount) {
+
+        if (itemToBuyCount > 0) {
+
+            this.moveItemsToSlot(0, itemToBuy, itemToBuyCount, quickMove, skipMove);
+        }
+
+        if (secondItemToBuyCount > 0) {
+
+            this.moveItemsToSlot(1, secondItemToBuy, secondItemToBuyCount, quickMove, skipMove);
+        }
+    }
+
+    /**
+     * Move trading recipe ingredients to trading slots
+     * copied and modified from 1.14+
+     */
+    private void moveItemsToSlot(int targetSlot, ItemStack itemstack, int count, boolean quickMove, boolean skipMove) {
+
+        if (!itemstack.isEmpty()) {
+            int leftover = 0;
+            for (int i = this.lastIndex; i < 39; ++i) {
+                ItemStack inventorystack = this.inventorySlots.get(i).getStack();
+                if (!inventorystack.isEmpty() && ItemStack.areItemsEqual(itemstack, inventorystack)) {
+                    ItemStack currentitemstack = this.merchantInventory.getStackInSlot(targetSlot);
+                    //mainly handles renamed items, !skipMove is a bit hacky as it might rename items involved with the trade
+                    if (!currentitemstack.isEmpty() && !ItemStack.areItemStackTagsEqual(currentitemstack, inventorystack) && !skipMove) {
+                        continue;
+                    }
+                    int int_3 = currentitemstack.isEmpty() ? 0 : currentitemstack.getCount();
+                    int int_32 = leftover > 0 ? leftover : count;
+                    int int_33 = Math.min(inventorystack.getCount(), int_32);
+                    leftover = int_32 - int_33;
+                    int int_34 = quickMove ? inventorystack.getCount() : int_33;
+                    int int_4 = Math.min(itemstack.getMaxStackSize() - int_3, int_34);
+                    ItemStack newitemstack = inventorystack.copy();
+                    int int_5 = int_3 + int_4;
+                    inventorystack.shrink(int_4);
+                    newitemstack.setCount(int_5);
+                    this.merchantInventory.setInventorySlotContents(targetSlot, newitemstack);
+                    int int_6 = quickMove ? itemstack.getMaxStackSize() : Math.min(itemstack.getMaxStackSize(), int_32 + int_3);
+                    if (int_5 >= int_6) {
+                        this.lastIndex = i;
+                        break;
+                    }
+                }
+                if (i == (this.lastIndex - 1 + 33) % 36 + 3) {
+                    this.lastIndex = 3;
+                    break;
+                }
+                i = (i - 2) % 36 + 2;
+            }
