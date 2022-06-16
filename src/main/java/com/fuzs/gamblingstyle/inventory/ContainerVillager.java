@@ -305,3 +305,40 @@ public class ContainerVillager extends ContainerMerchant {
                 }
                 i = (i - 2) % 36 + 2;
             }
+        }
+
+    }
+
+    /**
+     * Check if trade is available (modified from {@link SlotMerchantResult})
+     */
+    private boolean isTradeAvailable(ItemStack itemToBuyRecipe, ItemStack secondItemToBuyRecipe, ItemStack firstInvItem, ItemStack secondInvItem) {
+
+        if (firstInvItem.getItem() == itemToBuyRecipe.getItem() && firstInvItem.getCount() >= itemToBuyRecipe.getCount()) {
+
+            if (!secondItemToBuyRecipe.isEmpty() && !secondInvItem.isEmpty() && secondItemToBuyRecipe.getItem() == secondInvItem.getItem() && secondInvItem.getCount() >= secondItemToBuyRecipe.getCount()) {
+
+                return true;
+            }
+
+            return secondItemToBuyRecipe.isEmpty() && secondInvItem.isEmpty();
+        }
+
+        return false;
+    }
+
+    /**
+     * Trade automatically using {@link SlotMerchantResult#onTake(EntityPlayer, ItemStack)} so that all the triggers apply
+     */
+    private void tradeAutomatically(ItemStack itemstack) {
+
+        ItemStack itemToSell = this.getSlot(2).onTake(this.player, itemstack);
+        if (!itemToSell.isEmpty()) {
+
+            ItemStack itemToSellCopy = itemToSell.copy();
+            if (!this.mergeItemStack(itemToSellCopy, 3, 39, true)) {
+
+                this.player.dropItem(itemToSellCopy, false);
+            }
+        }
+    }
