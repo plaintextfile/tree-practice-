@@ -342,3 +342,25 @@ public class ContainerVillager extends ContainerMerchant {
             }
         }
     }
+
+    @Override
+    public void onContainerClosed(EntityPlayer playerIn) {
+
+        // copied from container base class
+        InventoryPlayer inventoryplayer = playerIn.inventory;
+        if (!inventoryplayer.getItemStack().isEmpty()) {
+
+            playerIn.dropItem(inventoryplayer.getItemStack(), false);
+            inventoryplayer.setItemStack(ItemStack.EMPTY);
+        }
+
+        // place items back in inventory instead of dropping on ground
+        this.merchant.setCustomer(null);
+        this.merchantInventory.removeStackFromSlot(2);
+        if (!this.world.isRemote) {
+
+            this.clearContainer(playerIn, this.world, this.merchantInventory);
+        }
+    }
+
+}
