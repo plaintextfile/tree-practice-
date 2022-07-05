@@ -11,3 +11,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @SuppressWarnings("unused")
+public class NetworkHandler {
+
+    private 
