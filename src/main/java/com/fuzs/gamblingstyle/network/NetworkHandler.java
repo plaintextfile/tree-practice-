@@ -13,4 +13,4 @@ import java.util.concurrent.atomic.AtomicInteger;
 @SuppressWarnings("unused")
 public class NetworkHandler {
 
-    private 
+    private static final SimpleNetworkWrapper MAI
