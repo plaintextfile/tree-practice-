@@ -14,4 +14,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class NetworkHandler {
 
     private static final SimpleNetworkWrapper MAIN_CHANNEL = NetworkRegistry.INSTANCE.newSimpleChannel(GamblingStyle.MODID);
-    private static final AtomicInteger DISCRIMINATOR = new AtomicInteger
+    private static final AtomicInteger DISCRIMINATOR = new AtomicInteger();
+
+    private static NetworkHandle
