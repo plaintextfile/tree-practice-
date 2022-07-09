@@ -16,4 +16,6 @@ public class NetworkHandler {
     private static final SimpleNetworkWrapper MAIN_CHANNEL = NetworkRegistry.INSTANCE.newSimpleChannel(GamblingStyle.MODID);
     private static final AtomicInteger DISCRIMINATOR = new AtomicInteger();
 
-    private static NetworkHandle
+    private static NetworkHandler instance;
+
+    public <T exte
