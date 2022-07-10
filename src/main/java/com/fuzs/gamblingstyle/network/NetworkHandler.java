@@ -18,4 +18,4 @@ public class NetworkHandler {
 
     private static NetworkHandler instance;
 
-    public <T exte
+    public <T extends Message<T>> void registerMess
