@@ -18,4 +18,4 @@ public class NetworkHandler {
 
     private static NetworkHandler instance;
 
-    public <T extends Message<T>> void registerMess
+    public <T extends Message<T>> void registerMessage(Class<T> messageType, Side receivingSide) {
