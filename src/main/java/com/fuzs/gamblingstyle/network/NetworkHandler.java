@@ -20,4 +20,7 @@ public class NetworkHandler {
 
     public <T extends Message<T>> void registerMessage(Class<T> messageType, Side receivingSide) {
 
-        MAIN_CHANNEL.registerMessage(messageType, messageType, DISCRIMINATOR.getAndI
+        MAIN_CHANNEL.registerMessage(messageType, messageType, DISCRIMINATOR.getAndIncrement(), receivingSide);
+    }
+
+    public 
