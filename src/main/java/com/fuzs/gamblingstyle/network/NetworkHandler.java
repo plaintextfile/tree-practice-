@@ -23,4 +23,6 @@ public class NetworkHandler {
         MAIN_CHANNEL.registerMessage(messageType, messageType, DISCRIMINATOR.getAndIncrement(), receivingSide);
     }
 
-    public 
+    public void sendToServer(Message<?> message) {
+
+ 
