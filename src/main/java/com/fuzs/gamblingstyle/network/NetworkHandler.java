@@ -25,4 +25,4 @@ public class NetworkHandler {
 
     public void sendToServer(Message<?> message) {
 
- 
+        MAIN_CHANNEL.sendToServer(message
