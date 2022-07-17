@@ -25,4 +25,7 @@ public class NetworkHandler {
 
     public void sendToServer(Message<?> message) {
 
-        MAIN_CHANNEL.sendToServer(message
+        MAIN_CHANNEL.sendToServer(message);
+    }
+
+    public void sendTo(Message<?> me
