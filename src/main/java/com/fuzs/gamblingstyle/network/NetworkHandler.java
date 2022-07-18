@@ -31,4 +31,6 @@ public class NetworkHandler {
     public void sendTo(Message<?> message, EntityPlayerMP player) {
 
         MAIN_CHANNEL.sendTo(message, player);
-    
+    }
+
+    public void sendToAll(Message<?> mess
