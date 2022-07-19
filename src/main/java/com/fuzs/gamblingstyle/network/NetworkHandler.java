@@ -35,4 +35,7 @@ public class NetworkHandler {
 
     public void sendToAll(Message<?> message) {
 
-        MAIN_CHANNEL.sendToAll(mess
+        MAIN_CHANNEL.sendToAll(message);
+    }
+
+    public void sendToAllNear(M
