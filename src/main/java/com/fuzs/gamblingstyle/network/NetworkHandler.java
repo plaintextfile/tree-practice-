@@ -33,4 +33,6 @@ public class NetworkHandler {
         MAIN_CHANNEL.sendTo(message, player);
     }
 
-    public void sendToAll(Message<?> mess
+    public void sendToAll(Message<?> message) {
+
+        MAIN_CHANNEL.sendToAll(mess
