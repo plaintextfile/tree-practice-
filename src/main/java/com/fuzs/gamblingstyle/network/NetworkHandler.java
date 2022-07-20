@@ -38,4 +38,6 @@ public class NetworkHandler {
         MAIN_CHANNEL.sendToAll(message);
     }
 
-    public void sendToAllNear(Message<?> message, int dimensionId, BlockPo
+    public void sendToAllNear(Message<?> message, int dimensionId, BlockPos pos) {
+
+        NetworkRegistry.TargetPoint targetPoin
