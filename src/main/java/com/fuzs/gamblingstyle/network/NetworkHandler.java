@@ -38,4 +38,4 @@ public class NetworkHandler {
         MAIN_CHANNEL.sendToAll(message);
     }
 
-    public void sendToAllNear(M
+    public void sendToAllNear(Message<?> message, int dimensionId, BlockPo
