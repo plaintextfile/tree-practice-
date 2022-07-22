@@ -40,4 +40,5 @@ public class NetworkHandler {
 
     public void sendToAllNear(Message<?> message, int dimensionId, BlockPos pos) {
 
-        NetworkRegistry.TargetPoint targetPoint = new NetworkRegistry.TargetPoint(pos.getX(), pos.
+        NetworkRegistry.TargetPoint targetPoint = new NetworkRegistry.TargetPoint(pos.getX(), pos.getY(), pos.getZ(), 64.0, dimensionId);
+    
