@@ -44,4 +44,6 @@ public class NetworkHandler {
         MAIN_CHANNEL.sendToAllAround(message, targetPoint);
     }
 
-    public void sendToDimension(Message<?> message, int dimension
+    public void sendToDimension(Message<?> message, int dimensionId) {
+
+        MAIN_CHANNEL.sendToDimension
