@@ -46,4 +46,7 @@ public class NetworkHandler {
 
     public void sendToDimension(Message<?> message, int dimensionId) {
 
-        MAIN_CHANNEL.sendToDimension
+        MAIN_CHANNEL.sendToDimension(message, dimensionId);
+    }
+
+    public stati
