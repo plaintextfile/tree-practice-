@@ -49,4 +49,6 @@ public class NetworkHandler {
         MAIN_CHANNEL.sendToDimension(message, dimensionId);
     }
 
-    public stati
+    public static NetworkHandler get() {
+
+       
