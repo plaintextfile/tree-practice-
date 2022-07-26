@@ -51,4 +51,6 @@ public class NetworkHandler {
 
     public static NetworkHandler get() {
 
-       
+        if (instance == null) {
+
+            instance 
