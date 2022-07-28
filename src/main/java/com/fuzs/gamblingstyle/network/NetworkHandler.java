@@ -53,4 +53,7 @@ public class NetworkHandler {
 
         if (instance == null) {
 
-            instance 
+            instance = new NetworkHandler();
+        }
+
+   
