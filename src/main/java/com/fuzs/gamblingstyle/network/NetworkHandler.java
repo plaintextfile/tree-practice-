@@ -56,4 +56,7 @@ public class NetworkHandler {
             instance = new NetworkHandler();
         }
 
-   
+        return instance;
+    }
+
+}
