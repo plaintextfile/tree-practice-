@@ -6,4 +6,5 @@ import net.minecraft.entity.player.EntityPlayer;
 
 public class CMoveIngredientsMessage extends Message<CMoveIngredientsMessage> {
 
-    priv
+    private int currentRecipeIndex;
+    private 
