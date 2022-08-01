@@ -4,4 +4,6 @@ import com.fuzs.gamblingstyle.inventory.ContainerVillager;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.entity.player.EntityPlayer;
 
-public class CMoveIngredientsMessage 
+public class CMoveIngredientsMessage extends Message<CMoveIngredientsMessage> {
+
+    priv
