@@ -7,4 +7,5 @@ import net.minecraft.entity.player.EntityPlayer;
 public class CMoveIngredientsMessage extends Message<CMoveIngredientsMessage> {
 
     private int currentRecipeIndex;
-    private 
+    private boolean clearSlots;
+    private boolean
