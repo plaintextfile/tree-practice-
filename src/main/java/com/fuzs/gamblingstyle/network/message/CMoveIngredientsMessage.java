@@ -8,4 +8,7 @@ public class CMoveIngredientsMessage extends Message<CMoveIngredientsMessage> {
 
     private int currentRecipeIndex;
     private boolean clearSlots;
-    private boolean
+    private boolean quickMove;
+    private boolean skipMove;
+
+    @Suppress
