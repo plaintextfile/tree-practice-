@@ -11,4 +11,5 @@ public class CMoveIngredientsMessage extends Message<CMoveIngredientsMessage> {
     private boolean quickMove;
     private boolean skipMove;
 
-    @Suppress
+    @SuppressWarnings("unused")
+    public CMoveIngredients
