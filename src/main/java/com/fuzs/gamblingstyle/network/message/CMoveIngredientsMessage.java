@@ -16,4 +16,4 @@ public class CMoveIngredientsMessage extends Message<CMoveIngredientsMessage> {
 
     }
 
-    public CMoveIngredientsMessage(int currentRecipeI
+    public CMoveIngredientsMessage(int currentRecipeIndex, boolean clearSlots, boolean quickM
