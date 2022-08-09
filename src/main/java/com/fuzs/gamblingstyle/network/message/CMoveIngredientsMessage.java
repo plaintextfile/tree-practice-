@@ -20,4 +20,5 @@ public class CMoveIngredientsMessage extends Message<CMoveIngredientsMessage> {
 
         this.currentRecipeIndex = currentRecipeIndex;
         this.clearSlots = clearSlots;
-        this.quickMove
+        this.quickMove = quickMove;
+        this.skipMove = s
