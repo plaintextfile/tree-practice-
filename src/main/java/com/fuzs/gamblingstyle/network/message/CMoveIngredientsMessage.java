@@ -25,4 +25,6 @@ public class CMoveIngredientsMessage extends Message<CMoveIngredientsMessage> {
     }
 
     @Override
-    public
+    public void write(ByteBuf buf) {
+
+        
