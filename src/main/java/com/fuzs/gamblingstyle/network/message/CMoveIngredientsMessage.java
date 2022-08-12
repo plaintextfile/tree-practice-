@@ -27,4 +27,4 @@ public class CMoveIngredientsMessage extends Message<CMoveIngredientsMessage> {
     @Override
     public void write(ByteBuf buf) {
 
-        
+        buf.writeInt(this.currentRecipeIndex)
