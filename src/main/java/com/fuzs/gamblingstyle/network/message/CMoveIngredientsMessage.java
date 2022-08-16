@@ -29,4 +29,5 @@ public class CMoveIngredientsMessage extends Message<CMoveIngredientsMessage> {
 
         buf.writeInt(this.currentRecipeIndex);
         buf.writeBoolean(this.clearSlots);
-        buf.writeBoolean(this.
+        buf.writeBoolean(this.quickMove);
+        buf.writeBoolean(t
