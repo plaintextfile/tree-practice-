@@ -33,4 +33,7 @@ public class CMoveIngredientsMessage extends Message<CMoveIngredientsMessage> {
         buf.writeBoolean(this.skipMove);
     }
 
-    @Ove
+    @Override
+    public void read(ByteBuf buf) {
+
+ 
