@@ -37,4 +37,5 @@ public class CMoveIngredientsMessage extends Message<CMoveIngredientsMessage> {
     public void read(ByteBuf buf) {
 
         this.currentRecipeIndex = buf.readInt();
-        this.clearSlots = buf
+        this.clearSlots = buf.readBoolean();
+        this.quickMove = buf.readBoo
