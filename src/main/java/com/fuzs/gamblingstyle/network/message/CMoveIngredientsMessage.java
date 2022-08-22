@@ -39,4 +39,8 @@ public class CMoveIngredientsMessage extends Message<CMoveIngredientsMessage> {
         this.currentRecipeIndex = buf.readInt();
         this.clearSlots = buf.readBoolean();
         this.quickMove = buf.readBoolean();
-        this.skipMove = buf.readBool
+        this.skipMove = buf.readBoolean();
+    }
+
+    @Override
+    protecte
