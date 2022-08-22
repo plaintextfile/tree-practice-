@@ -43,4 +43,6 @@ public class CMoveIngredientsMessage extends Message<CMoveIngredientsMessage> {
     }
 
     @Override
-    protecte
+    protected MessageProcessor createProcessor() {
+
+        retu
