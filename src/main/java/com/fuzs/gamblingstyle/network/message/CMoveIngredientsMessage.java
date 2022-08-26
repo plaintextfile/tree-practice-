@@ -45,4 +45,7 @@ public class CMoveIngredientsMessage extends Message<CMoveIngredientsMessage> {
     @Override
     protected MessageProcessor createProcessor() {
 
-        return new MoveIngredientsProcessor
+        return new MoveIngredientsProcessor();
+    }
+
+    private class MoveIngredients
