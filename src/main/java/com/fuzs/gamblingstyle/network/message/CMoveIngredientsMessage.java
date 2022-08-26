@@ -48,4 +48,6 @@ public class CMoveIngredientsMessage extends Message<CMoveIngredientsMessage> {
         return new MoveIngredientsProcessor();
     }
 
-    private class MoveIngredients
+    private class MoveIngredientsProcessor implements MessageProcessor {
+
+  
