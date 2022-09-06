@@ -53,4 +53,6 @@ public class CMoveIngredientsMessage extends Message<CMoveIngredientsMessage> {
         @Override
         public void accept(EntityPlayer player) {
 
-            if (pl
+            if (player.openContainer instanceof ContainerVillager) {
+
+     
