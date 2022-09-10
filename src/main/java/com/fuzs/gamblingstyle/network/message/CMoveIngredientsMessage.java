@@ -55,4 +55,4 @@ public class CMoveIngredientsMessage extends Message<CMoveIngredientsMessage> {
 
             if (player.openContainer instanceof ContainerVillager) {
 
-                ((ContainerVillager) player.openContainer).handleClickedButtonItems(CMoveIngredientsMessage.this.currentRecipeIndex, CMoveIngredientsMessage.this
+                ((ContainerVillager) player.openContainer).handleClickedButtonItems(CMoveIngredientsMessage.this.currentRecipeIndex, CMoveIngredientsMessage.this.clearSlots, CMoveIngredientsMessage.th
