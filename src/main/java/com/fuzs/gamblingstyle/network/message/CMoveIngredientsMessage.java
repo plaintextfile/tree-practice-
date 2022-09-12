@@ -57,4 +57,8 @@ public class CMoveIngredientsMessage extends Message<CMoveIngredientsMessage> {
 
                 ((ContainerVillager) player.openContainer).handleClickedButtonItems(CMoveIngredientsMessage.this.currentRecipeIndex, CMoveIngredientsMessage.this.clearSlots, CMoveIngredientsMessage.this.quickMove, CMoveIngredientsMessage.this.skipMove);
             }
- 
+        }
+
+    }
+
+}
