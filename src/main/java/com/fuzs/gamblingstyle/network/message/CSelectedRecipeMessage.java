@@ -25,3 +25,38 @@ public class CSelectedRecipeMessage extends Message<CSelectedRecipeMessage> {
     public void write(ByteBuf buf) {
 
         buf.writeInt(this.currentRecipeIndex);
+        buf.writeBoolean(this.clearSlots);
+    }
+
+    @Override
+    public void read(ByteBuf buf) {
+
+        this.currentRecipeIndex = buf.readInt();
+        this.clearSlots = buf.readBoolean();
+    }
+
+    @Override
+    protected MessageProcessor createProcessor() {
+
+        return new SelectedRecipeProcessor();
+    }
+
+    private class SelectedRecipeProcessor implements MessageProcessor {
+
+        @Override
+        public void accept(EntityPlayer player) {
+
+            if (player.openContainer instanceof ContainerVillager) {
+
+                ContainerVillager openContainer = (ContainerVillager) player.openContainer;
+                openContainer.setCurrentRecipeIndex(CSelectedRecipeMessage.this.currentRecipeIndex);
+                if (CSelectedRecipeMessage.this.clearSlots) {
+
+                    openContainer.clearTradingSlots();
+                }
+            }
+        }
+
+    }
+
+}
