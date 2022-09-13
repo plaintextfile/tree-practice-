@@ -36,3 +36,40 @@ public class CSyncTradingInfoMessage extends Message<CSyncTradingInfoMessage> {
         buf.writeInt(this.merchantId);
         buf.writeByte(this.lastTradeIndex);
         buf.writeByte(this.filterMode.ordinal());
+        buf.writeByte(this.favoriteTrades.length);
+        for (byte favorite : this.favoriteTrades) {
+
+            buf.writeByte(favorite);
+        }
+    }
+
+    @Override
+    public void read(ByteBuf buf) {
+
+        this.merchantId = buf.readInt();
+        this.lastTradeIndex = buf.readUnsignedByte();
+        this.filterMode = ITradingInfo.FilterMode.values()[buf.readUnsignedByte()];
+        int tradesLength = buf.readUnsignedByte();
+        this.favoriteTrades = new byte[tradesLength];
+        for (int i = 0; i < tradesLength; i++) {
+
+            this.favoriteTrades[i] = (byte) buf.readUnsignedByte();
+        }
+    }
+
+    @Override
+    protected MessageProcessor createProcessor() {
+
+        return new SyncTradingInfoProcessor();
+    }
+
+    private class SyncTradingInfoProcessor implements MessageProcessor {
+
+        @Override
+        public void accept(EntityPlayer player) {
+
+            World worldIn = player.world;
+            Entity entity = worldIn.getEntityByID(CSyncTradingInfoMessage.this.merchantId);
+            if (entity instanceof EntityLivingBase && entity instanceof IMerchant) {
+
+                ITradingInfo tradingInfo = CapabilityController.getCapability(entity, CapabilityController.TRADING_INFO_CAPABILITY);
