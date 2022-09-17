@@ -74,3 +74,9 @@ public abstract class Message<T extends Message<T>> implements IMessage, IMessag
 
     /**
      * separate class for executing message when received to work around sided limitations
+     */
+    protected interface MessageProcessor extends Consumer<EntityPlayer> {
+
+    }
+
+}
