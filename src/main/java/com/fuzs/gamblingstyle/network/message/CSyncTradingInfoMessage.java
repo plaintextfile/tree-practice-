@@ -73,3 +73,12 @@ public class CSyncTradingInfoMessage extends Message<CSyncTradingInfoMessage> {
             if (entity instanceof EntityLivingBase && entity instanceof IMerchant) {
 
                 ITradingInfo tradingInfo = CapabilityController.getCapability(entity, CapabilityController.TRADING_INFO_CAPABILITY);
+                tradingInfo.setLastTradeIndex(CSyncTradingInfoMessage.this.lastTradeIndex);
+                tradingInfo.setFilterMode(CSyncTradingInfoMessage.this.filterMode);
+                tradingInfo.setFavoriteTrades(CSyncTradingInfoMessage.this.favoriteTrades);
+            }
+        }
+
+    }
+
+}
