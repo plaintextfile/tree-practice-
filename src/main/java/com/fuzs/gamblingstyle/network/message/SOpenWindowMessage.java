@@ -35,3 +35,38 @@ public class SOpenWindowMessage extends Message<SOpenWindowMessage> {
         this.windowTitle = windowTitle;
         this.slotCount = slotCount;
         this.merchantId = merchantId;
+        this.lastTradeIndex = lastTradeIndex;
+        this.filterMode = filterMode;
+        this.favoriteTrades = favoriteTrades;
+    }
+
+    @Override
+    public void write(ByteBuf buf) {
+
+        buf.writeByte(this.windowId);
+        ByteBufUtils.writeUTF8String(buf, ITextComponent.Serializer.componentToJson(this.windowTitle));
+        buf.writeByte(this.slotCount);
+        buf.writeInt(this.merchantId);
+        buf.writeByte(this.lastTradeIndex);
+        buf.writeByte(this.filterMode.ordinal());
+        buf.writeByte(this.favoriteTrades.length);
+        for (byte favorite : this.favoriteTrades) {
+
+            buf.writeByte(favorite);
+        }
+    }
+
+    @Override
+    public void read(ByteBuf buf) {
+
+        this.windowId = buf.readUnsignedByte();
+        this.windowTitle = ITextComponent.Serializer.jsonToComponent(ByteBufUtils.readUTF8String(buf));
+        this.slotCount = buf.readUnsignedByte();
+        this.merchantId = buf.readInt();
+        this.lastTradeIndex = buf.readUnsignedByte();
+        this.filterMode = ITradingInfo.FilterMode.values()[buf.readUnsignedByte()];
+        int tradesLength = buf.readUnsignedByte();
+        this.favoriteTrades = new byte[tradesLength];
+        for (int i = 0; i < tradesLength; i++) {
+
+            this.favoriteTrades[i] = (byte) buf.readUnsignedByte();
