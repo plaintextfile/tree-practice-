@@ -39,3 +39,38 @@ public abstract class Message<T extends Message<T>> implements IMessage, IMessag
 
         this.write(buf);
     }
+
+    @Override
+    public final void fromBytes(ByteBuf buf) {
+
+        this.read(buf);
+    }
+
+    /**
+     * writes message data to buffer
+     * @param buf network data byte buffer
+     */
+    protected abstract void write(final ByteBuf buf);
+
+    /**
+     * reads message data from buffer
+     * @param buf network data byte buffer
+     */
+    protected abstract void read(final ByteBuf buf);
+
+    /**
+     * handles message on receiving side
+     * @param player server player when sent from client
+     */
+    public final void process(EntityPlayer player) {
+
+        this.createProcessor().accept(player);
+    }
+
+    /**
+     * @return message processor to run when received
+     */
+    protected abstract MessageProcessor createProcessor();
+
+    /**
+     * separate class for executing message when received to work around sided limitations
