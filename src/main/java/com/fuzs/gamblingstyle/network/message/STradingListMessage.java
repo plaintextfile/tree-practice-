@@ -1,3 +1,4 @@
 package com.fuzs.gamblingstyle.network.message;
 
-import com.fuzs.gambli
+import com.fuzs.gamblingstyle.GamblingStyle;
+import com.fuzs.gambling
