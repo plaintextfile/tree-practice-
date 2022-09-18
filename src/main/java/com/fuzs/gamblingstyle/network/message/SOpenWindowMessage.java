@@ -70,3 +70,30 @@ public class SOpenWindowMessage extends Message<SOpenWindowMessage> {
         for (int i = 0; i < tradesLength; i++) {
 
             this.favoriteTrades[i] = (byte) buf.readUnsignedByte();
+        }
+    }
+
+    @Override
+    protected MessageProcessor createProcessor() {
+
+        return new OpenWindowProcessor();
+    }
+
+    private class OpenWindowProcessor implements MessageProcessor {
+
+        @Override
+        public void accept(EntityPlayer player) {
+
+            World worldIn = player.world;
+            Entity entity = worldIn.getEntityByID(SOpenWindowMessage.this.merchantId);
+            if (entity instanceof EntityLivingBase && entity instanceof IMerchant) {
+
+                GuiVillager guiContainer = new GuiVillager(player.inventory, new NpcMerchant(player, SOpenWindowMessage.this.windowTitle), (EntityLivingBase) entity, SOpenWindowMessage.this.lastTradeIndex, SOpenWindowMessage.this.filterMode, SOpenWindowMessage.this.favoriteTrades);
+                Minecraft.getMinecraft().displayGuiScreen(guiContainer);
+                player.openContainer.windowId = SOpenWindowMessage.this.windowId;
+            }
+        }
+
+    }
+
+}
