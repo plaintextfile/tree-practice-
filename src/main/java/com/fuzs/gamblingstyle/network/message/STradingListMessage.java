@@ -9,4 +9,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.village.MerchantRecipeList;
 
-import
+import java.io.IOException;
+
+public class STr
