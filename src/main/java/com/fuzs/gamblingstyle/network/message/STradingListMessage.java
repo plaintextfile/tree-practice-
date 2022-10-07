@@ -11,4 +11,8 @@ import net.minecraft.village.MerchantRecipeList;
 
 import java.io.IOException;
 
-public class STradingListMessage extends Message<STradingListMessa
+public class STradingListMessage extends Message<STradingListMessage> {
+
+    private PacketBuffer data;
+
+    @Suppre
