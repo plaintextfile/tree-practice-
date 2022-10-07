@@ -15,4 +15,5 @@ public class STradingListMessage extends Message<STradingListMessage> {
 
     private PacketBuffer data;
 
-    @Suppre
+    @SuppressWarnings("unused")
+    public STradingListMes
