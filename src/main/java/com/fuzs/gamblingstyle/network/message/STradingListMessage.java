@@ -11,4 +11,4 @@ import net.minecraft.village.MerchantRecipeList;
 
 import java.io.IOException;
 
-public class STr
+public class STradingListMessage extends Message<STradingListMessa
