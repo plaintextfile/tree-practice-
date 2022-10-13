@@ -22,4 +22,5 @@ public class STradingListMessage extends Message<STradingListMessage> {
 
     public STradingListMessage(PacketBuffer bufIn) {
 
-        this.data 
+        this.data = bufIn;
+        if (bufIn.writerInde
