@@ -20,4 +20,6 @@ public class STradingListMessage extends Message<STradingListMessage> {
 
     }
 
-    public STradingList
+    public STradingListMessage(PacketBuffer bufIn) {
+
+        this.data 
