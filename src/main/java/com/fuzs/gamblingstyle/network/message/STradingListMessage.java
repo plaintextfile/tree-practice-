@@ -23,4 +23,6 @@ public class STradingListMessage extends Message<STradingListMessage> {
     public STradingListMessage(PacketBuffer bufIn) {
 
         this.data = bufIn;
-        if (bufIn.writerInde
+        if (bufIn.writerIndex() > 1048576) {
+
+            throw new IllegalAr
