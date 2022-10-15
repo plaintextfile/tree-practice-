@@ -30,4 +30,6 @@ public class STradingListMessage extends Message<STradingListMessage> {
     }
 
     @Override
-    public vo
+    public void read(ByteBuf buf) {
+
+        int bytes = buf.read
