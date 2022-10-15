@@ -25,4 +25,4 @@ public class STradingListMessage extends Message<STradingListMessage> {
         this.data = bufIn;
         if (bufIn.writerIndex() > 1048576) {
 
-            throw new IllegalAr
+            throw new IllegalArgumentException("Payload may not be larger than 104857
