@@ -33,4 +33,6 @@ public class STradingListMessage extends Message<STradingListMessage> {
     public void read(ByteBuf buf) {
 
         int bytes = buf.readableBytes();
-        if (bytes >= 0 && bytes <= 1048576)
+        if (bytes >= 0 && bytes <= 1048576) {
+
+            this.data = new PacketBuffer(buf
