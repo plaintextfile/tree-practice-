@@ -32,4 +32,5 @@ public class STradingListMessage extends Message<STradingListMessage> {
     @Override
     public void read(ByteBuf buf) {
 
-        int bytes = buf.read
+        int bytes = buf.readableBytes();
+        if (bytes >= 0 && bytes <= 1048576)
