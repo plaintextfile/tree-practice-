@@ -38,4 +38,4 @@ public class STradingListMessage extends Message<STradingListMessage> {
             this.data = new PacketBuffer(buf.readBytes(bytes));
         } else {
 
-            throw 
+            throw new IllegalArgumentException("Payload 
