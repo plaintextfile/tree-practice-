@@ -35,4 +35,7 @@ public class STradingListMessage extends Message<STradingListMessage> {
         int bytes = buf.readableBytes();
         if (bytes >= 0 && bytes <= 1048576) {
 
-            this.data = new PacketBuffer(buf
+            this.data = new PacketBuffer(buf.readBytes(bytes));
+        } else {
+
+            throw 
