@@ -38,4 +38,5 @@ public class STradingListMessage extends Message<STradingListMessage> {
             this.data = new PacketBuffer(buf.readBytes(bytes));
         } else {
 
-            throw new IllegalArgumentException("Payload 
+            throw new IllegalArgumentException("Payload may not be larger than 1048576 bytes");
+    
