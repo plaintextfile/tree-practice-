@@ -45,4 +45,6 @@ public class STradingListMessage extends Message<STradingListMessage> {
     @Override
     public void write(ByteBuf buf) {
 
-        synchronized
+        synchronized (this.data) {
+
+            this.data.mar
