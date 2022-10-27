@@ -39,4 +39,8 @@ public class STradingListMessage extends Message<STradingListMessage> {
         } else {
 
             throw new IllegalArgumentException("Payload may not be larger than 1048576 bytes");
-    
+        }
+    }
+
+    @Override
+    public void write(
