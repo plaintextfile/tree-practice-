@@ -43,4 +43,6 @@ public class STradingListMessage extends Message<STradingListMessage> {
     }
 
     @Override
-    public void write(
+    public void write(ByteBuf buf) {
+
+        synchronized
