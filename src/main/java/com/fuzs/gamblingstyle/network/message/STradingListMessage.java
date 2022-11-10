@@ -48,4 +48,5 @@ public class STradingListMessage extends Message<STradingListMessage> {
         synchronized (this.data) {
 
             this.data.markReaderIndex();
-            buf.writeByte
+            buf.writeBytes(this.data);
+            this.data.resetRead
