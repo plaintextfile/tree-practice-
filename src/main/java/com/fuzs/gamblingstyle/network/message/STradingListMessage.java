@@ -54,4 +54,6 @@ public class STradingListMessage extends Message<STradingListMessage> {
     }
 
     @Override
-    prot
+    protected MessageProcessor createProcessor() {
+
+  
