@@ -49,4 +49,9 @@ public class STradingListMessage extends Message<STradingListMessage> {
 
             this.data.markReaderIndex();
             buf.writeBytes(this.data);
-            this.data.resetRead
+            this.data.resetReaderIndex();
+        }
+    }
+
+    @Override
+    prot
