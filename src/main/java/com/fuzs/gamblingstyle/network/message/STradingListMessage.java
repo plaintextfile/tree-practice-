@@ -56,4 +56,7 @@ public class STradingListMessage extends Message<STradingListMessage> {
     @Override
     protected MessageProcessor createProcessor() {
 
-        return new TradingListProcessor()
+        return new TradingListProcessor();
+    }
+
+    private class TradingListProcessor im
