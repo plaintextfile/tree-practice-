@@ -59,4 +59,6 @@ public class STradingListMessage extends Message<STradingListMessage> {
         return new TradingListProcessor();
     }
 
-    private class TradingListProcessor im
+    private class TradingListProcessor implements MessageProcessor {
+
+    
