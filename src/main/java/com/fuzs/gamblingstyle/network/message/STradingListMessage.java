@@ -61,4 +61,5 @@ public class STradingListMessage extends Message<STradingListMessage> {
 
     private class TradingListProcessor implements MessageProcessor {
 
-    
+        @Override
+        public void acce
