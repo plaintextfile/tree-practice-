@@ -62,4 +62,8 @@ public class STradingListMessage extends Message<STradingListMessage> {
     private class TradingListProcessor implements MessageProcessor {
 
         @Override
-        public void acce
+        public void accept(EntityPlayer player) {
+
+            try {
+
+         
