@@ -66,4 +66,5 @@ public class STradingListMessage extends Message<STradingListMessage> {
 
             try {
 
-                Minecraft mc = Minecraft.get
+                Minecraft mc = Minecraft.getMinecraft();
+                int
