@@ -67,4 +67,4 @@ public class STradingListMessage extends Message<STradingListMessage> {
             try {
 
                 Minecraft mc = Minecraft.getMinecraft();
-                int
+                int windowId = STradingListMessage.this.data.readIn
