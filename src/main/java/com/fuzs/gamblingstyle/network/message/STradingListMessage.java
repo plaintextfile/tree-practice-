@@ -69,4 +69,4 @@ public class STradingListMessage extends Message<STradingListMessage> {
                 Minecraft mc = Minecraft.getMinecraft();
                 int windowId = STradingListMessage.this.data.readInt();
                 GuiScreen screen = mc.currentScreen;
-                if (screen i
+                if (screen instanceof GuiVillager && windowId == mc.pla
