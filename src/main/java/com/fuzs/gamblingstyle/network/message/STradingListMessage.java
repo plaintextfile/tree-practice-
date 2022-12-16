@@ -71,4 +71,4 @@ public class STradingListMessage extends Message<STradingListMessage> {
                 GuiScreen screen = mc.currentScreen;
                 if (screen instanceof GuiVillager && windowId == mc.player.openContainer.windowId) {
 
-                    MerchantRecipeList merchantRecipes = MerchantRecipeList.rea
+                    MerchantRecipeList merchantRecipes = MerchantRecipeList.readFromBuf(STradingListMessage.this.data);
