@@ -74,4 +74,6 @@ public class STradingListMessage extends Message<STradingListMessage> {
                     MerchantRecipeList merchantRecipes = MerchantRecipeList.readFromBuf(STradingListMessage.this.data);
                     ((GuiVillager) screen).setMerchantRecipes(merchantRecipes);
                 }
-            } catch (IOExcep
+            } catch (IOException e) {
+
+                GamblingStyle.L
