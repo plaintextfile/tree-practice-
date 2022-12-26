@@ -76,4 +76,7 @@ public class STradingListMessage extends Message<STradingListMessage> {
                 }
             } catch (IOException e) {
 
-                GamblingStyle.LOGGER.error("Couldn't load trade info", e)
+                GamblingStyle.LOGGER.error("Couldn't load trade info", e);
+            } finally {
+
+          
