@@ -81,4 +81,6 @@ public class STradingListMessage extends Message<STradingListMessage> {
 
                 if (STradingListMessage.this.data != null) {
 
-                    STradingListMessa
+                    STradingListMessage.this.data.release();
+                }
+         
