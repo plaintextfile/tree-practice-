@@ -83,4 +83,9 @@ public class STradingListMessage extends Message<STradingListMessage> {
 
                     STradingListMessage.this.data.release();
                 }
-         
+            }
+        }
+
+    }
+
+}
