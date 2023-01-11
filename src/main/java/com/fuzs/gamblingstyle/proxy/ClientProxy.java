@@ -1,4 +1,5 @@
 package com.fuzs.gamblingstyle.proxy;
 
 import com.fuzs.gamblingstyle.client.handler.OpenGuiHandler;
-import net.minecra
+import net.minecraft.client.Minecraft;
+import net.min
