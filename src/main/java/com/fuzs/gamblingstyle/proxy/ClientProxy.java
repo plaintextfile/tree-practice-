@@ -4,4 +4,5 @@ import com.fuzs.gamblingstyle.client.handler.OpenGuiHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
-i
+import net.minecraft.util.IThreadListener;
+imp
