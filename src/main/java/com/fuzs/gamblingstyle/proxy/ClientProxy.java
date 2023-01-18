@@ -6,4 +6,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.IThreadListener;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.common.event.FML
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+
+import javax.ann
