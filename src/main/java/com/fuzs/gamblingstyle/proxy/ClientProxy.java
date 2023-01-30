@@ -12,4 +12,6 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 @SuppressWarnings("unused")
-public clas
+public class ClientProxy implements IProxy {
+
+    @
