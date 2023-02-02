@@ -16,4 +16,4 @@ public class ClientProxy implements IProxy {
 
     @Nonnull
     @Override
-    public IThread
+    public IThreadListener getInstance(@Nullable IThreadListener
