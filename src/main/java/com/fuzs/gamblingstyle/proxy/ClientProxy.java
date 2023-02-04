@@ -18,4 +18,4 @@ public class ClientProxy implements IProxy {
     @Override
     public IThreadListener getInstance(@Nullable IThreadListener threadListener) {
 
-        return threadLis
+        return threadListener != null ? threadListener : Minecraft.getMi
