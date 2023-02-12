@@ -23,4 +23,4 @@ public class ClientProxy implements IProxy {
 
     @Nonnull
     @Override
-   
+    public EntityPlayer getPlayer(@Nullable 
