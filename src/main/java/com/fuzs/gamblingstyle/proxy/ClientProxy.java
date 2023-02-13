@@ -25,4 +25,8 @@ public class ClientProxy implements IProxy {
     @Override
     public EntityPlayer getPlayer(@Nullable EntityPlayerMP player) {
 
-        return player != null ? player : Minecraft.getMinecraft().play
+        return player != null ? player : Minecraft.getMinecraft().player;
+    }
+
+    @Override
+    public 
