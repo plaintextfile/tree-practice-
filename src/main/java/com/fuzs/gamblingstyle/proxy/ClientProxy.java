@@ -29,4 +29,4 @@ public class ClientProxy implements IProxy {
     }
 
     @Override
-    public 
+    public void onSidedInit(FMLInitializationEven
