@@ -31,4 +31,7 @@ public class ClientProxy implements IProxy {
     @Override
     public void onSidedInit(FMLInitializationEvent evt) {
 
-        MinecraftForge.EVENT_BUS.regis
+        MinecraftForge.EVENT_BUS.register(new OpenGuiHandler());
+    }
+
+}
