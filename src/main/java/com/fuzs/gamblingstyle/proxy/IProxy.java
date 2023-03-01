@@ -8,4 +8,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-public int
+public interface IProxy {
+
+    /**
+     * @return
