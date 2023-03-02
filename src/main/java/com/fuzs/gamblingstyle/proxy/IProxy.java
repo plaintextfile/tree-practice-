@@ -11,4 +11,5 @@ import javax.annotation.Nullable;
 public interface IProxy {
 
     /**
-     * @return
+     * @return Minecraft client or server instance
+   
