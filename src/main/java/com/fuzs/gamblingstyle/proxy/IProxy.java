@@ -14,4 +14,7 @@ public interface IProxy {
      * @return Minecraft client or server instance
      */
     @Nonnull
-    IThreadListener getInstance(@Nullable IThreadListener threadListener)
+    IThreadListener getInstance(@Nullable IThreadListener threadListener);
+
+    /**
+     * @return player entity
