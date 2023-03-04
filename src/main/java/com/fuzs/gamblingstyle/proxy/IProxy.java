@@ -17,4 +17,7 @@ public interface IProxy {
     IThreadListener getInstance(@Nullable IThreadListener threadListener);
 
     /**
-     * @return player entity
+     * @return player entity depending on side
+     */
+    @Nonnull
+  
