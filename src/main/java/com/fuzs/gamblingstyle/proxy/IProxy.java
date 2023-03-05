@@ -20,4 +20,4 @@ public interface IProxy {
      * @return player entity depending on side
      */
     @Nonnull
-  
+    EntityPlayer getPlayer(@Nullable EntityPla
