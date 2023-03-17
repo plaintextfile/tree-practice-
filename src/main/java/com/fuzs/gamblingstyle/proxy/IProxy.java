@@ -22,4 +22,8 @@ public interface IProxy {
     @Nonnull
     EntityPlayer getPlayer(@Nullable EntityPlayerMP player);
 
-    default void onSidedInit
+    default void onSidedInit(final FMLInitializationEvent evt) {
+
+    }
+
+}
