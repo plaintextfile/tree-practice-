@@ -1,3 +1,4 @@
 package com.fuzs.gamblingstyle.proxy;
 
-import net.minec
+import net.minecraft.entity.player.EntityPlayer;
+import net.m
