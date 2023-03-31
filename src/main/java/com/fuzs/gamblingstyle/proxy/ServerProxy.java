@@ -6,4 +6,5 @@ import net.minecraft.util.IThreadListener;
 
 import javax.annotation.Nonnull;
 
-@SuppressWarnings("un
+@SuppressWarnings("unused")
+public class ServerProxy implements I
