@@ -7,4 +7,8 @@ import net.minecraft.util.IThreadListener;
 import javax.annotation.Nonnull;
 
 @SuppressWarnings("unused")
-public class ServerProxy implements I
+public class ServerProxy implements IProxy {
+
+    @Nonnull
+    @Override
+  
