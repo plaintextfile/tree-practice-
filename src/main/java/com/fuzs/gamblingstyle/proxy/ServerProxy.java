@@ -11,4 +11,4 @@ public class ServerProxy implements IProxy {
 
     @Nonnull
     @Override
-  
+    public IThreadListener getInstance(IThreadL
