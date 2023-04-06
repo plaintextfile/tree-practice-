@@ -18,4 +18,4 @@ public class ServerProxy implements IProxy {
 
     @Nonnull
     @Override
-    
+    public EntityPlayer getPlayer(EntityPlaye
