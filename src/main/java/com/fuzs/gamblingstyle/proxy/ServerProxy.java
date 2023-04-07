@@ -21,4 +21,6 @@ public class ServerProxy implements IProxy {
     public EntityPlayer getPlayer(EntityPlayerMP player) {
 
         return player;
-   
+    }
+
+}
