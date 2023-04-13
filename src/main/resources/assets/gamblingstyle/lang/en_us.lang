@@ -1,4 +1,5 @@
 gui.button.show=Show: %s
 gui.button.show.all=All
 gui.button.show.buys=Buys
-gui.bu
+gui.button.show.sells=Sells
+gui.button.s
